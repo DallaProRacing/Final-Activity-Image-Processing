@@ -1,0 +1,10 @@
+D:\Documents\FACULDADE URI\QUINTO SEMESTRE\PROCESSAMENTO DE IMAGENS\ImageLoader\ImageLoader\bin\Debug\ImageLoader.exe.config
+D:\Documents\FACULDADE URI\QUINTO SEMESTRE\PROCESSAMENTO DE IMAGENS\ImageLoader\ImageLoader\bin\Debug\ImageLoader.exe
+D:\Documents\FACULDADE URI\QUINTO SEMESTRE\PROCESSAMENTO DE IMAGENS\ImageLoader\ImageLoader\bin\Debug\ImageLoader.pdb
+D:\Documents\FACULDADE URI\QUINTO SEMESTRE\PROCESSAMENTO DE IMAGENS\ImageLoader\ImageLoader\obj\Debug\ImageLoader.csproj.AssemblyReference.cache
+D:\Documents\FACULDADE URI\QUINTO SEMESTRE\PROCESSAMENTO DE IMAGENS\ImageLoader\ImageLoader\obj\Debug\ImageLoader.Form1.resources
+D:\Documents\FACULDADE URI\QUINTO SEMESTRE\PROCESSAMENTO DE IMAGENS\ImageLoader\ImageLoader\obj\Debug\ImageLoader.Properties.Resources.resources
+D:\Documents\FACULDADE URI\QUINTO SEMESTRE\PROCESSAMENTO DE IMAGENS\ImageLoader\ImageLoader\obj\Debug\ImageLoader.csproj.GenerateResource.cache
+D:\Documents\FACULDADE URI\QUINTO SEMESTRE\PROCESSAMENTO DE IMAGENS\ImageLoader\ImageLoader\obj\Debug\ImageLoader.csproj.CoreCompileInputs.cache
+D:\Documents\FACULDADE URI\QUINTO SEMESTRE\PROCESSAMENTO DE IMAGENS\ImageLoader\ImageLoader\obj\Debug\ImageLoader.exe
+D:\Documents\FACULDADE URI\QUINTO SEMESTRE\PROCESSAMENTO DE IMAGENS\ImageLoader\ImageLoader\obj\Debug\ImageLoader.pdb
