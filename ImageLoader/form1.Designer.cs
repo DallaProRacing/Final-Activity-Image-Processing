@@ -52,6 +52,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnReduce = new System.Windows.Forms.Button();
             this.btnClean = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
             this.panel1.SuspendLayout();
@@ -202,7 +203,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(275, 13);
+            this.label4.Location = new System.Drawing.Point(287, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(141, 15);
             this.label4.TabIndex = 7;
@@ -229,7 +230,7 @@
             this.btnReset.BackColor = System.Drawing.Color.White;
             this.btnReset.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.Black;
-            this.btnReset.Location = new System.Drawing.Point(280, 36);
+            this.btnReset.Location = new System.Drawing.Point(280, 40);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(67, 24);
             this.btnReset.TabIndex = 11;
@@ -323,13 +324,24 @@
             this.btnClean.BackColor = System.Drawing.Color.White;
             this.btnClean.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClean.ForeColor = System.Drawing.Color.Black;
-            this.btnClean.Location = new System.Drawing.Point(375, 36);
+            this.btnClean.Location = new System.Drawing.Point(373, 41);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(67, 24);
             this.btnClean.TabIndex = 20;
             this.btnClean.Text = "To Clean";
             this.btnClean.UseVisualStyleBackColor = false;
             this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel2.Location = new System.Drawing.Point(258, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 293);
+            this.panel2.TabIndex = 21;
             // 
             // Form1
             // 
@@ -352,6 +364,7 @@
             this.Controls.Add(this.btnSubt);
             this.Controls.Add(this.btnSum);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Corbel", 8.25F);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -393,6 +406,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnReduce;
         private System.Windows.Forms.Button btnClean;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
