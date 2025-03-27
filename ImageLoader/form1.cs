@@ -101,13 +101,13 @@ namespace ImageLoader
             }
             return tempImg;
         }
-               
+
         private void btnReset_Click_1(object sender, EventArgs e)
         {
             if (img1Original != null)
             {
                 img1 = new Bitmap(img1Original);
-                pictureBoxResult.Image = img1;
+                pictureBoxResult.Image = null;
             }
         }
         private void btnMult_Click(object sender, EventArgs e)
@@ -163,7 +163,7 @@ namespace ImageLoader
                 for (int j = 0; j < img.Height; j++)
                 {
                     Color pixel = img.GetPixel(i, j);
-                    int gray = (int)(pixel.R * 0.3 + pixel.G * 0.59 + pixel.B * 0.11);
+                    int gray = (int)(pixel.R * 0.3 + pixel.G * 0.3 + pixel.B * 0.3);
                     img.SetPixel(i, j, Color.FromArgb(pixel.A, gray, gray, gray));
                 }
             }
@@ -183,6 +183,72 @@ namespace ImageLoader
             pictureBoxResult.Image = img1;
         }
 
+        private void btnDifference_Click(object sender, EventArgs e)
+        {
+            if (img1 == null || img2 == null)
+            {
+                MessageBox.Show("Carregue as duas imagens antes de calcular a diferença.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Bitmap C = MesclarImagens(img1, img2, false);
+            Bitmap D = MesclarImagens(img2, img1, false);
+            Bitmap resultado = MesclarImagens(C, D, true);
+
+            pictureBoxResult.Image = resultado;
+        }
+
+        private void btnRight_Click(object sender, EventArgs e)
+        {
+            if (img1 == null)
+            {
+                MessageBox.Show("Carregue uma imagem antes de girá-la.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            img1 = RotacionarDireita(img1);
+            pictureBoxResult.Image = img1;
+        }
+        private Bitmap RotacionarDireita(Bitmap img)
+        {
+            int largura = img.Height;
+            int altura = img.Width;
+            Bitmap rotacionada = new Bitmap(largura, altura);
+
+            for (int i = 0; i < img.Width; i++)
+            {
+                for (int j = 0; j < img.Height; j++)
+                {
+                    rotacionada.SetPixel(j, img.Width - 1 - i, img.GetPixel(i, j));
+                }
+            }
+            return rotacionada;
+        }
+
+        private void btnLeft_Click(object sender, EventArgs e)
+        {
+            if (img1 == null)
+            {
+                MessageBox.Show("Carregue uma imagem antes de girá-la.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            img1 = RotacionarEsquerda(img1);
+            pictureBoxResult.Image = img1;
+        }
+        private Bitmap RotacionarEsquerda(Bitmap img)
+        {
+            int largura = img.Height;
+            int altura = img.Width;
+            Bitmap rotacionada = new Bitmap(largura, altura);
+
+            for (int i = 0; i < img.Width; i++)
+            {
+                for (int j = 0; j < img.Height; j++)
+                {
+                    rotacionada.SetPixel(img.Height - 1 - j, i, img.GetPixel(i, j));
+                }
+            }
+            return rotacionada;
+        }
         private void btnReduce_Click(object sender, EventArgs e)
         {
             if (img1 == null || img2 == null)
@@ -193,6 +259,17 @@ namespace ImageLoader
             img1 = MesclarImagens(img1, img2, false);
             pictureBoxResult.Image = img1;
         }
+
+        private void btnResetImg1_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
+        }
+
+        private void btnResetImg2_Click(object sender, EventArgs e)
+        {
+            pictureBox2.Image = null;
+        }
+
         private Bitmap MesclarImagens(Bitmap imgA, Bitmap imgB, bool isAddition)
         {
             Bitmap resultado = new Bitmap(imgA.Width, imgA.Height);
@@ -212,12 +289,7 @@ namespace ImageLoader
                 }
             }
             return resultado;
-        }
-        private void btnClean_Click(object sender, EventArgs e)
-        {
-            pictureBoxResult.Image = null;
-        }
-
+        }    
        
     }
 
