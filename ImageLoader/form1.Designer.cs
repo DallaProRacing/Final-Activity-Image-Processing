@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btImg1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -37,13 +43,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btImg2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSum = new System.Windows.Forms.Button();
             this.btnSubt = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSum = new System.Windows.Forms.TextBox();
             this.txtSubt = new System.Windows.Forms.TextBox();
-            this.btnReset = new System.Windows.Forms.Button();
             this.txtDiv = new System.Windows.Forms.TextBox();
             this.txtMult = new System.Windows.Forms.TextBox();
             this.btndiv = new System.Windows.Forms.Button();
@@ -57,14 +63,38 @@
             this.btnDifference = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnResetImg1 = new System.Windows.Forms.Button();
-            this.btnResetImg2 = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.txtLimiar = new System.Windows.Forms.TextBox();
+            this.btnLimiar = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnNOT = new System.Windows.Forms.Button();
+            this.btnOR = new System.Windows.Forms.Button();
+            this.btnXOR = new System.Windows.Forms.Button();
+            this.btnAND = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txtBlending = new System.Windows.Forms.TextBox();
+            this.btnBlending = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.chartOrigImage = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartEqualizedImage = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.btnEqualização = new System.Windows.Forms.Button();
+            this.btnHistograma = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnMEAN = new System.Windows.Forms.Button();
+            this.btnMAX = new System.Windows.Forms.Button();
+            this.btnMIN = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
             this.panel1.SuspendLayout();
@@ -74,6 +104,14 @@
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartOrigImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartEqualizedImage)).BeginInit();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // btImg1
@@ -130,8 +168,6 @@
             this.panel1.AllowDrop = true;
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel1.Controls.Add(this.btnResetImg2);
-            this.panel1.Controls.Add(this.btnResetImg1);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.btImg2);
             this.panel1.Controls.Add(this.label3);
@@ -179,6 +215,19 @@
             this.label3.Size = new System.Drawing.Size(107, 11);
             this.label3.TabIndex = 6;
             this.label3.Text = "Ruan C. Dalla Rosa";
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.White;
+            this.btnReset.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.Black;
+            this.btnReset.Location = new System.Drawing.Point(162, 456);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(67, 24);
+            this.btnReset.TabIndex = 11;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click_1);
             // 
             // label2
             // 
@@ -244,19 +293,6 @@
             this.txtSubt.Name = "txtSubt";
             this.txtSubt.Size = new System.Drawing.Size(65, 22);
             this.txtSubt.TabIndex = 10;
-            // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.Color.White;
-            this.btnReset.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.Black;
-            this.btnReset.Location = new System.Drawing.Point(162, 456);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(67, 24);
-            this.btnReset.TabIndex = 11;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click_1);
             // 
             // txtDiv
             // 
@@ -416,6 +452,18 @@
             this.panel4.Size = new System.Drawing.Size(182, 72);
             this.panel4.TabIndex = 24;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(7, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(157, 30);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Functions for arrangements:\r\nFliplr and Flipud\r\n";
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
@@ -428,18 +476,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(182, 89);
             this.panel3.TabIndex = 22;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(7, 6);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 30);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Functions for arrangements:\r\nFliplr and Flipud\r\n";
             // 
             // panel5
             // 
@@ -493,38 +529,362 @@
             this.label8.TabIndex = 13;
             this.label8.Text = "Working with both images";
             // 
-            // btnResetImg1
+            // panel7
             // 
-            this.btnResetImg1.BackColor = System.Drawing.Color.Red;
-            this.btnResetImg1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetImg1.ForeColor = System.Drawing.Color.White;
-            this.btnResetImg1.Location = new System.Drawing.Point(201, 64);
-            this.btnResetImg1.Name = "btnResetImg1";
-            this.btnResetImg1.Size = new System.Drawing.Size(24, 24);
-            this.btnResetImg1.TabIndex = 25;
-            this.btnResetImg1.Text = "X";
-            this.btnResetImg1.UseVisualStyleBackColor = false;
-            this.btnResetImg1.Click += new System.EventHandler(this.btnResetImg1_Click);
+            this.panel7.BackColor = System.Drawing.Color.Transparent;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.txtLimiar);
+            this.panel7.Controls.Add(this.btnLimiar);
+            this.panel7.Controls.Add(this.label9);
+            this.panel7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel7.Location = new System.Drawing.Point(258, 456);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(182, 60);
+            this.panel7.TabIndex = 25;
             // 
-            // btnResetImg2
+            // txtLimiar
             // 
-            this.btnResetImg2.BackColor = System.Drawing.Color.Red;
-            this.btnResetImg2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetImg2.ForeColor = System.Drawing.Color.White;
-            this.btnResetImg2.Location = new System.Drawing.Point(201, 259);
-            this.btnResetImg2.Name = "btnResetImg2";
-            this.btnResetImg2.Size = new System.Drawing.Size(26, 24);
-            this.btnResetImg2.TabIndex = 26;
-            this.btnResetImg2.Text = "X";
-            this.btnResetImg2.UseVisualStyleBackColor = false;
-            this.btnResetImg2.Click += new System.EventHandler(this.btnResetImg2_Click);
+            this.txtLimiar.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.txtLimiar.Location = new System.Drawing.Point(9, 25);
+            this.txtLimiar.Name = "txtLimiar";
+            this.txtLimiar.Size = new System.Drawing.Size(65, 22);
+            this.txtLimiar.TabIndex = 27;
+            // 
+            // btnLimiar
+            // 
+            this.btnLimiar.BackColor = System.Drawing.Color.White;
+            this.btnLimiar.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimiar.ForeColor = System.Drawing.Color.Black;
+            this.btnLimiar.Location = new System.Drawing.Point(95, 25);
+            this.btnLimiar.Name = "btnLimiar";
+            this.btnLimiar.Size = new System.Drawing.Size(74, 24);
+            this.btnLimiar.TabIndex = 24;
+            this.btnLimiar.Text = "Convert";
+            this.btnLimiar.UseVisualStyleBackColor = false;
+            this.btnLimiar.Click += new System.EventHandler(this.btnLimiar_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(7, 6);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(114, 15);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Image Thresholding";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.btnNOT);
+            this.panel8.Controls.Add(this.btnOR);
+            this.panel8.Controls.Add(this.btnXOR);
+            this.panel8.Controls.Add(this.btnAND);
+            this.panel8.Controls.Add(this.label10);
+            this.panel8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel8.Location = new System.Drawing.Point(258, 522);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(182, 92);
+            this.panel8.TabIndex = 26;
+            // 
+            // btnNOT
+            // 
+            this.btnNOT.BackColor = System.Drawing.Color.White;
+            this.btnNOT.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNOT.ForeColor = System.Drawing.Color.Black;
+            this.btnNOT.Location = new System.Drawing.Point(96, 54);
+            this.btnNOT.Name = "btnNOT";
+            this.btnNOT.Size = new System.Drawing.Size(74, 24);
+            this.btnNOT.TabIndex = 27;
+            this.btnNOT.Text = "NOT";
+            this.btnNOT.UseVisualStyleBackColor = false;
+            this.btnNOT.Click += new System.EventHandler(this.btnNOT_Click);
+            // 
+            // btnOR
+            // 
+            this.btnOR.BackColor = System.Drawing.Color.White;
+            this.btnOR.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOR.ForeColor = System.Drawing.Color.Black;
+            this.btnOR.Location = new System.Drawing.Point(96, 24);
+            this.btnOR.Name = "btnOR";
+            this.btnOR.Size = new System.Drawing.Size(74, 24);
+            this.btnOR.TabIndex = 26;
+            this.btnOR.Text = "OR";
+            this.btnOR.UseVisualStyleBackColor = false;
+            this.btnOR.Click += new System.EventHandler(this.btnOR_Click);
+            // 
+            // btnXOR
+            // 
+            this.btnXOR.BackColor = System.Drawing.Color.White;
+            this.btnXOR.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXOR.ForeColor = System.Drawing.Color.Black;
+            this.btnXOR.Location = new System.Drawing.Point(7, 54);
+            this.btnXOR.Name = "btnXOR";
+            this.btnXOR.Size = new System.Drawing.Size(74, 24);
+            this.btnXOR.TabIndex = 25;
+            this.btnXOR.Text = "XOR";
+            this.btnXOR.UseVisualStyleBackColor = false;
+            this.btnXOR.Click += new System.EventHandler(this.btnXOR_Click);
+            // 
+            // btnAND
+            // 
+            this.btnAND.BackColor = System.Drawing.Color.White;
+            this.btnAND.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAND.ForeColor = System.Drawing.Color.Black;
+            this.btnAND.Location = new System.Drawing.Point(7, 24);
+            this.btnAND.Name = "btnAND";
+            this.btnAND.Size = new System.Drawing.Size(74, 24);
+            this.btnAND.TabIndex = 24;
+            this.btnAND.Text = "AND";
+            this.btnAND.UseVisualStyleBackColor = false;
+            this.btnAND.Click += new System.EventHandler(this.btnAND_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(7, 6);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(108, 15);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Logical Operations";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Transparent;
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.txtBlending);
+            this.panel9.Controls.Add(this.btnBlending);
+            this.panel9.Controls.Add(this.label11);
+            this.panel9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel9.Location = new System.Drawing.Point(258, 620);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(182, 62);
+            this.panel9.TabIndex = 28;
+            // 
+            // txtBlending
+            // 
+            this.txtBlending.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.txtBlending.Location = new System.Drawing.Point(13, 24);
+            this.txtBlending.Name = "txtBlending";
+            this.txtBlending.Size = new System.Drawing.Size(65, 22);
+            this.txtBlending.TabIndex = 28;
+            // 
+            // btnBlending
+            // 
+            this.btnBlending.BackColor = System.Drawing.Color.White;
+            this.btnBlending.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBlending.ForeColor = System.Drawing.Color.Black;
+            this.btnBlending.Location = new System.Drawing.Point(95, 23);
+            this.btnBlending.Name = "btnBlending";
+            this.btnBlending.Size = new System.Drawing.Size(74, 24);
+            this.btnBlending.TabIndex = 24;
+            this.btnBlending.Text = "Blending";
+            this.btnBlending.UseVisualStyleBackColor = false;
+            this.btnBlending.Click += new System.EventHandler(this.btnBlending_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(10, 6);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 15);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Blending";
+            // 
+            // chartOrigImage
+            // 
+            this.chartOrigImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartOrigImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            chartArea5.Name = "ChartArea1";
+            this.chartOrigImage.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartOrigImage.Legends.Add(legend5);
+            this.chartOrigImage.Location = new System.Drawing.Point(-1, 42);
+            this.chartOrigImage.Name = "chartOrigImage";
+            this.chartOrigImage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartOrigImage.Series.Add(series5);
+            this.chartOrigImage.Size = new System.Drawing.Size(397, 204);
+            this.chartOrigImage.TabIndex = 29;
+            this.chartOrigImage.Text = "Histogran of image";
+            // 
+            // chartEqualizedImage
+            // 
+            this.chartEqualizedImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            chartArea6.Name = "ChartArea1";
+            this.chartEqualizedImage.ChartAreas.Add(chartArea6);
+            legend6.Name = "Histogran of image";
+            this.chartEqualizedImage.Legends.Add(legend6);
+            this.chartEqualizedImage.Location = new System.Drawing.Point(3, 271);
+            this.chartEqualizedImage.Name = "chartEqualizedImage";
+            this.chartEqualizedImage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Histogran of image";
+            series6.Name = "Series1";
+            this.chartEqualizedImage.Series.Add(series6);
+            this.chartEqualizedImage.Size = new System.Drawing.Size(397, 217);
+            this.chartEqualizedImage.TabIndex = 30;
+            this.chartEqualizedImage.Text = "chart2";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Transparent;
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.btnEqualização);
+            this.panel10.Controls.Add(this.btnHistograma);
+            this.panel10.Controls.Add(this.chartOrigImage);
+            this.panel10.Controls.Add(this.chartEqualizedImage);
+            this.panel10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel10.Location = new System.Drawing.Point(449, 4);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(401, 500);
+            this.panel10.TabIndex = 24;
+            // 
+            // btnEqualização
+            // 
+            this.btnEqualização.BackColor = System.Drawing.Color.White;
+            this.btnEqualização.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEqualização.ForeColor = System.Drawing.Color.Black;
+            this.btnEqualização.Location = new System.Drawing.Point(14, 243);
+            this.btnEqualização.Name = "btnEqualização";
+            this.btnEqualização.Size = new System.Drawing.Size(91, 24);
+            this.btnEqualização.TabIndex = 31;
+            this.btnEqualização.Text = "Equalização";
+            this.btnEqualização.UseVisualStyleBackColor = false;
+            this.btnEqualização.Click += new System.EventHandler(this.btnEqualização_Click);
+            // 
+            // btnHistograma
+            // 
+            this.btnHistograma.BackColor = System.Drawing.Color.White;
+            this.btnHistograma.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistograma.ForeColor = System.Drawing.Color.Black;
+            this.btnHistograma.Location = new System.Drawing.Point(14, 9);
+            this.btnHistograma.Name = "btnHistograma";
+            this.btnHistograma.Size = new System.Drawing.Size(91, 24);
+            this.btnHistograma.TabIndex = 29;
+            this.btnHistograma.Text = "Histograma";
+            this.btnHistograma.UseVisualStyleBackColor = false;
+            this.btnHistograma.Click += new System.EventHandler(this.btnHistograma_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Transparent;
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.panel12);
+            this.panel11.Controls.Add(this.label13);
+            this.panel11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel11.Location = new System.Drawing.Point(856, 4);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(268, 500);
+            this.panel11.TabIndex = 22;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(8, 2);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(255, 15);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Filtragem no domínio espacial com convulação";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(6, 3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(23, 15);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "14)";
+            // 
+            // btnMEAN
+            // 
+            this.btnMEAN.BackColor = System.Drawing.Color.White;
+            this.btnMEAN.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMEAN.ForeColor = System.Drawing.Color.Black;
+            this.btnMEAN.Location = new System.Drawing.Point(86, 22);
+            this.btnMEAN.Name = "btnMEAN";
+            this.btnMEAN.Size = new System.Drawing.Size(62, 24);
+            this.btnMEAN.TabIndex = 9;
+            this.btnMEAN.Text = "MEAN";
+            this.btnMEAN.UseVisualStyleBackColor = false;
+            this.btnMEAN.Click += new System.EventHandler(this.btnMEAN_Click);
+            // 
+            // btnMAX
+            // 
+            this.btnMAX.BackColor = System.Drawing.Color.White;
+            this.btnMAX.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMAX.ForeColor = System.Drawing.Color.Black;
+            this.btnMAX.Location = new System.Drawing.Point(11, 22);
+            this.btnMAX.Name = "btnMAX";
+            this.btnMAX.Size = new System.Drawing.Size(62, 24);
+            this.btnMAX.TabIndex = 10;
+            this.btnMAX.Text = "MAX";
+            this.btnMAX.UseVisualStyleBackColor = false;
+            this.btnMAX.Click += new System.EventHandler(this.btnMAX_Click);
+            // 
+            // btnMIN
+            // 
+            this.btnMIN.BackColor = System.Drawing.Color.White;
+            this.btnMIN.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMIN.ForeColor = System.Drawing.Color.Black;
+            this.btnMIN.Location = new System.Drawing.Point(160, 22);
+            this.btnMIN.Name = "btnMIN";
+            this.btnMIN.Size = new System.Drawing.Size(62, 24);
+            this.btnMIN.TabIndex = 11;
+            this.btnMIN.Text = "MIN";
+            this.btnMIN.UseVisualStyleBackColor = false;
+            this.btnMIN.Click += new System.EventHandler(this.btnMIN_Click);
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Transparent;
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.label12);
+            this.panel12.Controls.Add(this.btnMAX);
+            this.panel12.Controls.Add(this.btnMIN);
+            this.panel12.Controls.Add(this.btnMEAN);
+            this.panel12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel12.Location = new System.Drawing.Point(11, 23);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(242, 60);
+            this.panel12.TabIndex = 22;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(759, 645);
+            this.ClientSize = new System.Drawing.Size(1370, 713);
+            this.Controls.Add(this.panel11);
+            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -558,6 +918,19 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartOrigImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartEqualizedImage)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -600,8 +973,32 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnResetImg2;
-        private System.Windows.Forms.Button btnResetImg1;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnLimiar;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button btnAND;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtLimiar;
+        private System.Windows.Forms.Button btnNOT;
+        private System.Windows.Forms.Button btnOR;
+        private System.Windows.Forms.Button btnXOR;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox txtBlending;
+        private System.Windows.Forms.Button btnBlending;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartOrigImage;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartEqualizedImage;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button btnEqualização;
+        private System.Windows.Forms.Button btnHistograma;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Button btnMIN;
+        private System.Windows.Forms.Button btnMAX;
+        private System.Windows.Forms.Button btnMEAN;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel12;
     }
 }
 
