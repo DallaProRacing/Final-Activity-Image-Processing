@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -258,7 +259,7 @@ namespace ImageLoader
             }
             img1 = MesclarImagens(img1, img2, false);
             pictureBoxResult.Image = img1;
-        }       
+        }
 
         private void btnLimiar_Click(object sender, EventArgs e)
         {
@@ -577,124 +578,370 @@ namespace ImageLoader
 
         private void btnMAX_Click(object sender, EventArgs e)
         {
-            if (img1 == null)
+            if (img1 == null || cbxTamMatriz.SelectedItem == null)
             {
-                MessageBox.Show("Carregue uma imagem antes de aplicar a efeito.");
+                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.");
                 return;
             }
-            img1 = AplicarFiltroMAX(img1);
+
+            int tamanhoMatriz = int.Parse(cbxTamMatriz.SelectedItem.ToString());
+            img1 = AplicarFiltro(img1, tamanhoMatriz, "MAX");
             pictureBoxResult.Image = img1;
         }
-        private Bitmap AplicarFiltroMAX(Bitmap original)
-        {
-            Bitmap resultado = new Bitmap(original.Width, original.Height);
 
-            for (int y = 1; y < original.Height - 1; y++)
-            {
-                for (int x = 1; x < original.Width - 1; x++)
-                {
-                    int maxR = 0, maxG = 0, maxB = 0;
-
-                    for (int j = -1; j <= 1; j++)
-                    {
-                        for (int i = -1; i <= 1; i++)
-                        {
-                            Color pixel = original.GetPixel(x + i, y + j);
-                            if (pixel.R > maxR) maxR = pixel.R;
-                            if (pixel.G > maxG) maxG = pixel.G;
-                            if (pixel.B > maxB) maxB = pixel.B;
-                        }
-                    }
-
-                    resultado.SetPixel(x, y, Color.FromArgb(maxR, maxG, maxB));
-                }
-            }
-
-            return resultado;
-        }
 
 
         private void btnMEAN_Click(object sender, EventArgs e)
         {
-            if (img1 == null)
+            if (img1 == null || cbxTamMatriz.SelectedItem == null)
             {
-                MessageBox.Show("Carregue uma imagem antes de aplicar a efeito.");
+                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.");
                 return;
             }
-            img1 = AplicarFiltroMEAN(img1);
+
+            int tamanhoMatriz = int.Parse(cbxTamMatriz.SelectedItem.ToString());
+            img1 = AplicarFiltro(img1, tamanhoMatriz, "MEAN");
             pictureBoxResult.Image = img1;
         }
-        private Bitmap AplicarFiltroMEAN(Bitmap original)
-        {
-            Bitmap resultado = new Bitmap(original.Width, original.Height);
 
-            for (int y = 1; y < original.Height - 1; y++)
-            {
-                for (int x = 1; x < original.Width - 1; x++)
-                {
-                    int sumR = 0, sumG = 0, sumB = 0;
-
-                    for (int j = -1; j <= 1; j++)
-                    {
-                        for (int i = -1; i <= 1; i++)
-                        {
-                            Color pixel = original.GetPixel(x + i, y + j);
-                            sumR += pixel.R;
-                            sumG += pixel.G;
-                            sumB += pixel.B;
-                        }
-                    }
-
-                    int meanR = sumR / 9;
-                    int meanG = sumG / 9;
-                    int meanB = sumB / 9;
-
-                    resultado.SetPixel(x, y, Color.FromArgb(meanR, meanG, meanB));
-                }
-            }
-
-            return resultado;
-        }
 
 
         private void btnMIN_Click(object sender, EventArgs e)
         {
-            if (img1 == null)
+            if (img1 == null || cbxTamMatriz.SelectedItem == null)
             {
-                MessageBox.Show("Carregue uma imagem antes de aplicar a efeito.");
+                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.");
                 return;
             }
-            img1 = AplicarFiltroMIN(img1);
+
+            int tamanhoMatriz = int.Parse(cbxTamMatriz.SelectedItem.ToString());
+            img1 = AplicarFiltro(img1, tamanhoMatriz, "MIN");
             pictureBoxResult.Image = img1;
         }
-        private Bitmap AplicarFiltroMIN(Bitmap original)
+
+
+        private Bitmap AplicarFiltro(Bitmap original, int tamanho, string tipoFiltro)
         {
             Bitmap resultado = new Bitmap(original.Width, original.Height);
+            int offset = tamanho / 2;
 
-            for (int y = 1; y < original.Height - 1; y++)
+            for (int y = 0; y < original.Height; y++)
             {
-                for (int x = 1; x < original.Width - 1; x++)
+                for (int x = 0; x < original.Width; x++)
                 {
-                    int minR = 255, minG = 255, minB = 255;
+                    int[] reds = new int[tamanho * tamanho];
+                    int[] greens = new int[tamanho * tamanho];
+                    int[] blues = new int[tamanho * tamanho];
+                    int index = 0;
 
-                    for (int j = -1; j <= 1; j++)
+                    for (int j = -offset; j <= offset; j++)
                     {
-                        for (int i = -1; i <= 1; i++)
+                        for (int i = -offset; i <= offset; i++)
                         {
-                            Color pixel = original.GetPixel(x + i, y + j);
-                            if (pixel.R < minR) minR = pixel.R;
-                            if (pixel.G < minG) minG = pixel.G;
-                            if (pixel.B < minB) minB = pixel.B;
+                            int px = x + i;
+                            int py = y + j;
+
+                            // Duplicação das bordas (espelhamento simples)
+                            if (px < 0) px = 0;
+                            if (py < 0) py = 0;
+                            if (px >= original.Width) px = original.Width - 1;
+                            if (py >= original.Height) py = original.Height - 1;
+
+                            Color pixel = original.GetPixel(px, py);
+
+                            reds[index] = pixel.R;
+                            greens[index] = pixel.G;
+                            blues[index] = pixel.B;
+                            index++;
                         }
                     }
 
-                    resultado.SetPixel(x, y, Color.FromArgb(minR, minG, minB));
+                    int r = 0, g = 0, b = 0;
+
+                    if (tipoFiltro == "MAX")
+                    {
+                        r = MaxValor(reds);
+                        g = MaxValor(greens);
+                        b = MaxValor(blues);
+                    }
+                    else if (tipoFiltro == "MIN")
+                    {
+                        r = MinValor(reds);
+                        g = MinValor(greens);
+                        b = MinValor(blues);
+                    }
+                    else if (tipoFiltro == "MEAN")
+                    {
+                        r = Media(reds);
+                        g = Media(greens);
+                        b = Media(blues);
+                    }
+
+                    resultado.SetPixel(x, y, Color.FromArgb(r, g, b));
                 }
             }
 
             return resultado;
         }
 
+        private int MaxValor(int[] vetor)
+        {
+            int max = vetor[0];
+            for (int i = 1; i < vetor.Length; i++)
+            {
+                if (vetor[i] > max) max = vetor[i];
+            }
+            return max;
+        }
+
+        private int MinValor(int[] vetor)
+        {
+            int min = vetor[0];
+            for (int i = 1; i < vetor.Length; i++)
+            {
+                if (vetor[i] < min) min = vetor[i];
+            }
+            return min;
+        }
+
+        private int Media(int[] vetor)
+        {
+            int soma = 0;
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                soma += vetor[i];
+            }
+            return soma / vetor.Length;
+        }
+
+        private void btnMediana_Click(object sender, EventArgs e)
+        {
+            if (img1 == null || cbxTamMatriz.SelectedItem == null)
+            {
+                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.");
+                return;
+            }
+            int tamanho = int.Parse(cbxTamMatriz.SelectedItem.ToString());
+            img1 = AplicarFiltroMediana(img1, tamanho);
+            pictureBoxResult.Image = img1;
+        }
+        private Bitmap AplicarFiltroMediana(Bitmap original, int tamanho)
+        {
+            Bitmap resultado = new Bitmap(original.Width, original.Height);
+            int offset = tamanho / 2;
+            int total = tamanho * tamanho;
+
+            for (int y = 0; y < original.Height; y++)
+            {
+                for (int x = 0; x < original.Width; x++)
+                {
+                    int[] r = new int[total];
+                    int[] g = new int[total];
+                    int[] b = new int[total];
+                    int index = 0;
+
+                    for (int j = -offset; j <= offset; j++)
+                    {
+                        for (int i = -offset; i <= offset; i++)
+                        {
+                            int px = x + i;
+                            int py = y + j;
+
+                            if (px < 0) px = 0;
+                            if (py < 0) py = 0;
+                            if (px >= original.Width) px = original.Width - 1;
+                            if (py >= original.Height) py = original.Height - 1;
+
+                            Color pixel = original.GetPixel(px, py);
+                            r[index] = pixel.R;
+                            g[index] = pixel.G;
+                            b[index] = pixel.B;
+                            index++;
+                        }
+                    }
+
+                    Array.Sort(r);
+                    Array.Sort(g);
+                    Array.Sort(b);
+                    resultado.SetPixel(x, y, Color.FromArgb(r[total / 2], g[total / 2], b[total / 2]));
+                }
+            }
+
+            return resultado;
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            if (img1 == null || cbxTamMatriz.SelectedItem == null)
+            {
+                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.");
+                return;
+            }
+            int tamanho = int.Parse(cbxTamMatriz.SelectedItem.ToString());
+            img1 = AplicarFiltroOrdem(img1, tamanho);
+            pictureBoxResult.Image = img1;
+        }
+        private Bitmap AplicarFiltroOrdem(Bitmap original, int tamanho)
+        {
+            Bitmap resultado = new Bitmap(original.Width, original.Height);
+            int offset = tamanho / 2;
+            int total = tamanho * tamanho;
+
+            for (int y = 0; y < original.Height; y++)
+            {
+                for (int x = 0; x < original.Width; x++)
+                {
+                    int[] r = new int[total];
+                    int[] g = new int[total];
+                    int[] b = new int[total];
+                    int index = 0;
+
+                    for (int j = -offset; j <= offset; j++)
+                    {
+                        for (int i = -offset; i <= offset; i++)
+                        {
+                            int px = x + i;
+                            int py = y + j;
+
+                            if (px < 0) px = 0;
+                            if (py < 0) py = 0;
+                            if (px >= original.Width) px = original.Width - 1;
+                            if (py >= original.Height) py = original.Height - 1;
+
+                            Color pixel = original.GetPixel(px, py);
+                            r[index] = pixel.R;
+                            g[index] = pixel.G;
+                            b[index] = pixel.B;
+                            index++;
+                        }
+                    }
+
+                    Array.Sort(r);
+                    Array.Sort(g);
+                    Array.Sort(b);
+                    resultado.SetPixel(x, y, Color.FromArgb(r[tamanho], g[tamanho], b[tamanho]));
+                }
+            }
+
+            return resultado;
+        }
+
+        private void btnSuavizacao_Click(object sender, EventArgs e)
+        {
+            if (img1 == null || cbxTamMatriz.SelectedItem == null)
+            {
+                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.");
+                return;
+            }
+            int tamanho = int.Parse(cbxTamMatriz.SelectedItem.ToString());
+            img1 = AplicarFiltroSuavizacao(img1, tamanho);
+            pictureBoxResult.Image = img1;
+        }
+        private Bitmap AplicarFiltroSuavizacao(Bitmap original, int tamanho)
+        {
+            Bitmap resultado = new Bitmap(original.Width, original.Height);
+            int offset = tamanho / 2;
+            int pesoCentro = 4;
+            int pesoVizinho = 1;
+
+            for (int y = 0; y < original.Height; y++)
+            {
+                for (int x = 0; x < original.Width; x++)
+                {
+                    int sumR = 0, sumG = 0, sumB = 0;
+                    int totalPeso = 0;
+
+                    for (int j = -offset; j <= offset; j++)
+                    {
+                        for (int i = -offset; i <= offset; i++)
+                        {
+                            int px = x + i;
+                            int py = y + j;
+
+                            if (px < 0) px = 0;
+                            if (py < 0) py = 0;
+                            if (px >= original.Width) px = original.Width - 1;
+                            if (py >= original.Height) py = original.Height - 1;
+
+                            int peso = (i == 0 && j == 0) ? pesoCentro : pesoVizinho;
+
+                            Color pixel = original.GetPixel(px, py);
+                            sumR += pixel.R * peso;
+                            sumG += pixel.G * peso;
+                            sumB += pixel.B * peso;
+                            totalPeso += peso;
+                        }
+                    }
+
+                    resultado.SetPixel(x, y, Color.FromArgb(sumR / totalPeso, sumG / totalPeso, sumB / totalPeso));
+                }
+            }
+
+            return resultado;
+        }
+
+        private void btnGaussiano_Click(object sender, EventArgs e)
+        {
+            if (img1 == null || cbxTamMatriz.SelectedItem == null)
+            {
+                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.");
+                return;
+            }
+            int tamanho = int.Parse(cbxTamMatriz.SelectedItem.ToString());
+            img1 = AplicarFiltroGaussiano(img1, tamanho);
+            pictureBoxResult.Image = img1;
+        }
+        private Bitmap AplicarFiltroGaussiano(Bitmap original, int tamanho)
+        {
+            Bitmap resultado = new Bitmap(original.Width, original.Height);
+            int offset = tamanho / 2;
+
+            // Cria máscara gaussiana simples normalizada (valor inteiro)
+            int[,] mascara = new int[tamanho, tamanho];
+            int soma = 0;
+            for (int j = -offset; j <= offset; j++)
+            {
+                for (int i = -offset; i <= offset; i++)
+                {
+                    int valor = (int)(Math.Exp(-(i * i + j * j) / 2.0) * 100);
+                    mascara[j + offset, i + offset] = valor;
+                    soma += valor;
+                }
+            }
+
+            for (int y = 0; y < original.Height; y++)
+            {
+                for (int x = 0; x < original.Width; x++)
+                {
+                    int sumR = 0, sumG = 0, sumB = 0;
+
+                    for (int j = -offset; j <= offset; j++)
+                    {
+                        for (int i = -offset; i <= offset; i++)
+                        {
+                            int px = x + i;
+                            int py = y + j;
+
+                            if (px < 0) px = 0;
+                            if (py < 0) py = 0;
+                            if (px >= original.Width) px = original.Width - 1;
+                            if (py >= original.Height) py = original.Height - 1;
+
+                            int peso = mascara[j + offset, i + offset];
+
+                            Color pixel = original.GetPixel(px, py);
+                            sumR += pixel.R * peso;
+                            sumG += pixel.G * peso;
+                            sumB += pixel.B * peso;
+                        }
+                    }
+
+                    resultado.SetPixel(x, y, Color.FromArgb(sumR / soma, sumG / soma, sumB / soma));
+                }
+            }
+
+            return resultado;
+        }
 
         private Bitmap MesclarImagens(Bitmap imgA, Bitmap imgB, bool isAddition)
         {

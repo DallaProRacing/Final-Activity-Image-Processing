@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btImg1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -89,12 +89,21 @@
             this.btnEqualização = new System.Windows.Forms.Button();
             this.btnHistograma = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.cbxTamMatriz = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnMEAN = new System.Windows.Forms.Button();
             this.btnMAX = new System.Windows.Forms.Button();
             this.btnMIN = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
+            this.btnMEAN = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnMediana = new System.Windows.Forms.Button();
+            this.btnOrder = new System.Windows.Forms.Button();
+            this.btnSuavizacao = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnGaussiano = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
             this.panel1.SuspendLayout();
@@ -709,17 +718,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartOrigImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea5.Name = "ChartArea1";
-            this.chartOrigImage.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartOrigImage.Legends.Add(legend5);
+            chartArea1.Name = "ChartArea1";
+            this.chartOrigImage.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartOrigImage.Legends.Add(legend1);
             this.chartOrigImage.Location = new System.Drawing.Point(-1, 42);
             this.chartOrigImage.Name = "chartOrigImage";
             this.chartOrigImage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartOrigImage.Series.Add(series5);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartOrigImage.Series.Add(series1);
             this.chartOrigImage.Size = new System.Drawing.Size(397, 204);
             this.chartOrigImage.TabIndex = 29;
             this.chartOrigImage.Text = "Histogran of image";
@@ -727,17 +736,17 @@
             // chartEqualizedImage
             // 
             this.chartEqualizedImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea6.Name = "ChartArea1";
-            this.chartEqualizedImage.ChartAreas.Add(chartArea6);
-            legend6.Name = "Histogran of image";
-            this.chartEqualizedImage.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea1";
+            this.chartEqualizedImage.ChartAreas.Add(chartArea2);
+            legend2.Name = "Histogran of image";
+            this.chartEqualizedImage.Legends.Add(legend2);
             this.chartEqualizedImage.Location = new System.Drawing.Point(3, 271);
             this.chartEqualizedImage.Name = "chartEqualizedImage";
             this.chartEqualizedImage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Histogran of image";
-            series6.Name = "Series1";
-            this.chartEqualizedImage.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Histogran of image";
+            series2.Name = "Series1";
+            this.chartEqualizedImage.Series.Add(series2);
             this.chartEqualizedImage.Size = new System.Drawing.Size(397, 217);
             this.chartEqualizedImage.TabIndex = 30;
             this.chartEqualizedImage.Text = "chart2";
@@ -796,17 +805,41 @@
             this.panel11.Size = new System.Drawing.Size(268, 500);
             this.panel11.TabIndex = 22;
             // 
-            // label13
+            // panel12
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(8, 2);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(255, 15);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Filtragem no domínio espacial com convulação";
+            this.panel12.BackColor = System.Drawing.Color.Transparent;
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.label18);
+            this.panel12.Controls.Add(this.btnGaussiano);
+            this.panel12.Controls.Add(this.label17);
+            this.panel12.Controls.Add(this.label16);
+            this.panel12.Controls.Add(this.label14);
+            this.panel12.Controls.Add(this.btnSuavizacao);
+            this.panel12.Controls.Add(this.btnOrder);
+            this.panel12.Controls.Add(this.btnMediana);
+            this.panel12.Controls.Add(this.cbxTamMatriz);
+            this.panel12.Controls.Add(this.label12);
+            this.panel12.Controls.Add(this.btnMAX);
+            this.panel12.Controls.Add(this.btnMIN);
+            this.panel12.Controls.Add(this.btnMEAN);
+            this.panel12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel12.Location = new System.Drawing.Point(11, 42);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(242, 183);
+            this.panel12.TabIndex = 22;
+            // 
+            // cbxTamMatriz
+            // 
+            this.cbxTamMatriz.FormattingEnabled = true;
+            this.cbxTamMatriz.Items.AddRange(new object[] {
+            "3",
+            "5",
+            "7"});
+            this.cbxTamMatriz.Location = new System.Drawing.Point(33, 2);
+            this.cbxTamMatriz.Name = "cbxTamMatriz";
+            this.cbxTamMatriz.Size = new System.Drawing.Size(62, 21);
+            this.cbxTamMatriz.TabIndex = 12;
             // 
             // label12
             // 
@@ -820,25 +853,12 @@
             this.label12.TabIndex = 8;
             this.label12.Text = "14)";
             // 
-            // btnMEAN
-            // 
-            this.btnMEAN.BackColor = System.Drawing.Color.White;
-            this.btnMEAN.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMEAN.ForeColor = System.Drawing.Color.Black;
-            this.btnMEAN.Location = new System.Drawing.Point(86, 22);
-            this.btnMEAN.Name = "btnMEAN";
-            this.btnMEAN.Size = new System.Drawing.Size(62, 24);
-            this.btnMEAN.TabIndex = 9;
-            this.btnMEAN.Text = "MEAN";
-            this.btnMEAN.UseVisualStyleBackColor = false;
-            this.btnMEAN.Click += new System.EventHandler(this.btnMEAN_Click);
-            // 
             // btnMAX
             // 
             this.btnMAX.BackColor = System.Drawing.Color.White;
             this.btnMAX.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMAX.ForeColor = System.Drawing.Color.Black;
-            this.btnMAX.Location = new System.Drawing.Point(11, 22);
+            this.btnMAX.Location = new System.Drawing.Point(33, 26);
             this.btnMAX.Name = "btnMAX";
             this.btnMAX.Size = new System.Drawing.Size(62, 24);
             this.btnMAX.TabIndex = 10;
@@ -851,7 +871,7 @@
             this.btnMIN.BackColor = System.Drawing.Color.White;
             this.btnMIN.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMIN.ForeColor = System.Drawing.Color.Black;
-            this.btnMIN.Location = new System.Drawing.Point(160, 22);
+            this.btnMIN.Location = new System.Drawing.Point(169, 27);
             this.btnMIN.Name = "btnMIN";
             this.btnMIN.Size = new System.Drawing.Size(62, 24);
             this.btnMIN.TabIndex = 11;
@@ -859,20 +879,130 @@
             this.btnMIN.UseVisualStyleBackColor = false;
             this.btnMIN.Click += new System.EventHandler(this.btnMIN_Click);
             // 
-            // panel12
+            // btnMEAN
             // 
-            this.panel12.BackColor = System.Drawing.Color.Transparent;
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel12.Controls.Add(this.label12);
-            this.panel12.Controls.Add(this.btnMAX);
-            this.panel12.Controls.Add(this.btnMIN);
-            this.panel12.Controls.Add(this.btnMEAN);
-            this.panel12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel12.Location = new System.Drawing.Point(11, 23);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(242, 60);
-            this.panel12.TabIndex = 22;
+            this.btnMEAN.BackColor = System.Drawing.Color.White;
+            this.btnMEAN.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMEAN.ForeColor = System.Drawing.Color.Black;
+            this.btnMEAN.Location = new System.Drawing.Point(101, 26);
+            this.btnMEAN.Name = "btnMEAN";
+            this.btnMEAN.Size = new System.Drawing.Size(62, 24);
+            this.btnMEAN.TabIndex = 9;
+            this.btnMEAN.Text = "MEAN";
+            this.btnMEAN.UseVisualStyleBackColor = false;
+            this.btnMEAN.Click += new System.EventHandler(this.btnMEAN_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(8, 2);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(255, 30);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Filtragem no domínio espacial com convulação\r\n(Filtros Passa-Baixa):\r\n";
+            // 
+            // btnMediana
+            // 
+            this.btnMediana.BackColor = System.Drawing.Color.White;
+            this.btnMediana.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMediana.ForeColor = System.Drawing.Color.Black;
+            this.btnMediana.Location = new System.Drawing.Point(33, 56);
+            this.btnMediana.Name = "btnMediana";
+            this.btnMediana.Size = new System.Drawing.Size(97, 24);
+            this.btnMediana.TabIndex = 13;
+            this.btnMediana.Text = "MEDIANA";
+            this.btnMediana.UseVisualStyleBackColor = false;
+            this.btnMediana.Click += new System.EventHandler(this.btnMediana_Click);
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.BackColor = System.Drawing.Color.White;
+            this.btnOrder.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrder.ForeColor = System.Drawing.Color.Black;
+            this.btnOrder.Location = new System.Drawing.Point(33, 86);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(97, 24);
+            this.btnOrder.TabIndex = 14;
+            this.btnOrder.Text = "ORDER";
+            this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
+            // 
+            // btnSuavizacao
+            // 
+            this.btnSuavizacao.BackColor = System.Drawing.Color.White;
+            this.btnSuavizacao.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuavizacao.ForeColor = System.Drawing.Color.Black;
+            this.btnSuavizacao.Location = new System.Drawing.Point(33, 116);
+            this.btnSuavizacao.Name = "btnSuavizacao";
+            this.btnSuavizacao.Size = new System.Drawing.Size(198, 24);
+            this.btnSuavizacao.TabIndex = 15;
+            this.btnSuavizacao.Text = "SUAVIZAÇÃO CONSERVATIVA";
+            this.btnSuavizacao.UseVisualStyleBackColor = false;
+            this.btnSuavizacao.Click += new System.EventHandler(this.btnSuavizacao_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(6, 61);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(23, 15);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "15)";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(6, 91);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(23, 15);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "16)";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(6, 121);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(23, 15);
+            this.label17.TabIndex = 19;
+            this.label17.Text = "17)";
+            // 
+            // btnGaussiano
+            // 
+            this.btnGaussiano.BackColor = System.Drawing.Color.White;
+            this.btnGaussiano.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGaussiano.ForeColor = System.Drawing.Color.Black;
+            this.btnGaussiano.Location = new System.Drawing.Point(33, 146);
+            this.btnGaussiano.Name = "btnGaussiano";
+            this.btnGaussiano.Size = new System.Drawing.Size(97, 24);
+            this.btnGaussiano.TabIndex = 20;
+            this.btnGaussiano.Text = "GAUSSIANO";
+            this.btnGaussiano.UseVisualStyleBackColor = false;
+            this.btnGaussiano.Click += new System.EventHandler(this.btnGaussiano_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(6, 151);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(23, 15);
+            this.label18.TabIndex = 21;
+            this.label18.Text = "18)";
             // 
             // Form1
             // 
@@ -999,6 +1129,15 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.ComboBox cbxTamMatriz;
+        private System.Windows.Forms.Button btnGaussiano;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnSuavizacao;
+        private System.Windows.Forms.Button btnOrder;
+        private System.Windows.Forms.Button btnMediana;
+        private System.Windows.Forms.Label label18;
     }
 }
 
