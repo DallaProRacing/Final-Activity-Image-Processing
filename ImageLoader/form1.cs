@@ -201,54 +201,88 @@ namespace ImageLoader
 
         private void btnRight_Click(object sender, EventArgs e)
         {
+
             if (img1 == null)
             {
-                MessageBox.Show("Carregue uma imagem antes de girá-la.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Carregue uma imagem antes de inverter verticalmente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            img1 = RotacionarDireita(img1);
-            pictureBoxResult.Image = img1;
-        }
-        private Bitmap RotacionarDireita(Bitmap img)
-        {
-            int largura = img.Height;
-            int altura = img.Width;
-            Bitmap rotacionada = new Bitmap(largura, altura);
 
-            for (int i = 0; i < img.Width; i++)
+            int largura = img1.Width;
+            int altura = img1.Height;
+            Bitmap invertida = new Bitmap(largura, altura);
+
+            for (int y = 0; y < altura; y++)
             {
-                for (int j = 0; j < img.Height; j++)
+                for (int x = 0; x < largura; x++)
                 {
-                    rotacionada.SetPixel(j, img.Width - 1 - i, img.GetPixel(i, j));
+                    Color cor = img1.GetPixel(x, y);
+                    invertida.SetPixel(x, altura - 1 - y, cor);
                 }
             }
-            return rotacionada;
+
+            img1 = invertida;
+            pictureBoxResult.Image = img1;
         }
+
 
         private void btnLeft_Click(object sender, EventArgs e)
         {
             if (img1 == null)
             {
-                MessageBox.Show("Carregue uma imagem antes de girá-la.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Carregue uma imagem antes de inverter horizontalmente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            img1 = RotacionarEsquerda(img1);
-            pictureBoxResult.Image = img1;
-        }
-        private Bitmap RotacionarEsquerda(Bitmap img)
-        {
-            int largura = img.Height;
-            int altura = img.Width;
-            Bitmap rotacionada = new Bitmap(largura, altura);
 
-            for (int i = 0; i < img.Width; i++)
+            int largura = img1.Width;
+            int altura = img1.Height;
+            Bitmap invertida = new Bitmap(largura, altura);
+
+            for (int y = 0; y < altura; y++)
             {
-                for (int j = 0; j < img.Height; j++)
+                for (int x = 0; x < largura; x++)
                 {
-                    rotacionada.SetPixel(img.Height - 1 - j, i, img.GetPixel(i, j));
+                    Color cor = img1.GetPixel(x, y);
+                    invertida.SetPixel(largura - 1 - x, y, cor);
                 }
             }
-            return rotacionada;
+
+            img1 = invertida;
+            pictureBoxResult.Image = img1;
+        }        
+        private void btnMediaDuasImagens_Click(object sender, EventArgs e)
+        {
+            if (img1 == null || img2 == null)
+            {
+                MessageBox.Show("Carregue duas imagens para realizar a média.");
+                return;
+            }
+
+            if (img1.Width != img2.Width || img1.Height != img2.Height)
+            {
+                MessageBox.Show("As imagens devem ter o mesmo tamanho.");
+                return;
+            }
+
+            Bitmap resultado = new Bitmap(img1.Width, img1.Height);
+
+            for (int y = 0; y < img1.Height; y++)
+            {
+                for (int x = 0; x < img1.Width; x++)
+                {
+                    Color pixel1 = img1.GetPixel(x, y);
+                    Color pixel2 = img2.GetPixel(x, y);
+
+                    int mediaR = (pixel1.R + pixel2.R) / 2;
+                    int mediaG = (pixel1.G + pixel2.G) / 2;
+                    int mediaB = (pixel1.B + pixel2.B) / 2;
+
+                    resultado.SetPixel(x, y, Color.FromArgb(mediaR, mediaG, mediaB));
+                }
+            }
+
+            img1 = resultado;
+            pictureBoxResult.Image = img1;
         }
         private void btnReduce_Click(object sender, EventArgs e)
         {
@@ -941,6 +975,36 @@ namespace ImageLoader
             }
 
             return resultado;
+        }
+
+        private void btnBaixar_Click(object sender, EventArgs e)
+        {
+            if (pictureBoxResult.Image == null)
+            {
+                MessageBox.Show("Não há imagem no resultado para salvar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            using (SaveFileDialog salvar = new SaveFileDialog())
+            {
+                salvar.Title = "Salvar Imagem";
+                salvar.Filter = "PNG (*.png)|*.png|JPEG (*.jpg)|*.jpg|Bitmap (*.bmp)|*.bmp";
+                salvar.DefaultExt = "png";
+
+                if (salvar.ShowDialog() == DialogResult.OK)
+                {
+                    // Verifica o formato escolhido e salva no formato correto
+                    System.Drawing.Imaging.ImageFormat formato = System.Drawing.Imaging.ImageFormat.Png;
+
+                    if (salvar.FileName.EndsWith(".jpg"))
+                        formato = System.Drawing.Imaging.ImageFormat.Jpeg;
+                    else if (salvar.FileName.EndsWith(".bmp"))
+                        formato = System.Drawing.Imaging.ImageFormat.Bmp;
+
+                    pictureBoxResult.Image.Save(salvar.FileName, formato);
+                    MessageBox.Show("Imagem salva com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private Bitmap MesclarImagens(Bitmap imgA, Bitmap imgB, bool isAddition)
