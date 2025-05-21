@@ -356,6 +356,11 @@ namespace ImageLoader
 
         private void btnAND_Click(object sender, EventArgs e)
         {
+            if (img1 == null || img2 == null)
+            {
+                MessageBox.Show("Carregue as duas imagens antes de aplicar a operação.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (!SaoImagensBinarias(img1, img2)) return;
             img1 = OperacaoLogica(img1, img2, "AND");
             pictureBoxResult.Image = img1;
@@ -363,6 +368,11 @@ namespace ImageLoader
 
         private void btnOR_Click(object sender, EventArgs e)
         {
+            if (img1 == null || img2 == null)
+            {
+                MessageBox.Show("Carregue as duas imagens antes de aplicar a operação.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (!SaoImagensBinarias(img1, img2)) return;
             img1 = OperacaoLogica(img1, img2, "OR");
             pictureBoxResult.Image = img1;
@@ -370,6 +380,11 @@ namespace ImageLoader
 
         private void btnXOR_Click(object sender, EventArgs e)
         {
+            if (img1 == null || img2 == null)
+            {
+                MessageBox.Show("Carregue as duas imagens antes de aplicar a operação.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (!SaoImagensBinarias(img1, img2)) return;
             img1 = OperacaoLogica(img1, img2, "XOR");
             pictureBoxResult.Image = img1;
@@ -377,6 +392,11 @@ namespace ImageLoader
 
         private void btnNOT_Click(object sender, EventArgs e)
         {
+            if (img1 == null || img2 == null)
+            {
+                MessageBox.Show("Carregue as duas imagens antes de aplicar a operação.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (!SaoImagensBinarias(img1, null)) return;
             img1 = OperacaoNot(img1);
             pictureBoxResult.Image = img1;
@@ -1006,6 +1026,162 @@ namespace ImageLoader
                 }
             }
         }
+
+        private void btnPrewitt_Click(object sender, EventArgs e)
+        {
+            if (img1 == null)
+            {
+                MessageBox.Show("Carregue uma imagem antes de aplicar o filtro Prewitt.");
+                return;
+            }
+
+            Bitmap comMediana = AplicarFiltroMediana((Bitmap)img1.Clone(), 3);
+            Bitmap cinza = ConverterParaEscalaDeCinza(comMediana);
+            Bitmap resultado = AplicarFiltroPrewitt(cinza);
+            img1 = resultado;
+            pictureBoxResult.Image = resultado;
+        }
+        private Bitmap AplicarFiltroPrewitt(Bitmap img)
+        {
+            int[,] gx = new int[,]
+            {
+        { -1, 0, 1 },
+        { -1, 0, 1 },
+        { -1, 0, 1 }
+            };
+
+            int[,] gy = new int[,]
+            {
+        {  1,  1,  1 },
+        {  0,  0,  0 },
+        { -1, -1, -1 }
+            };
+
+            return AplicarFiltroPassaAlta(img, gx, gy);
+        }
+
+
+        private void btnSobel_Click(object sender, EventArgs e)
+        {
+            if (img1 == null)
+            {
+                MessageBox.Show("Carregue uma imagem antes de aplicar o filtro Sobel.");
+                return;
+            }
+
+            Bitmap comMediana = AplicarFiltroMediana((Bitmap)img1.Clone(), 3);
+            Bitmap cinza = ConverterParaEscalaDeCinza(comMediana);
+            Bitmap resultado = AplicarFiltroSobel(cinza);
+            img1 = resultado;
+            pictureBoxResult.Image = resultado;
+        }
+        private Bitmap AplicarFiltroSobel(Bitmap img)
+        {
+            int[,] gx = new int[,]
+            {
+        { -1, 0, 1 },
+        { -2, 0, 2 },
+        { -1, 0, 1 }
+            };
+
+            int[,] gy = new int[,]
+            {
+        {  1,  2,  1 },
+        {  0,  0,  0 },
+        { -1, -2, -1 }
+            };
+
+            return AplicarFiltroPassaAlta(img, gx, gy);
+        }
+
+
+        private void btnLaplaciano_Click(object sender, EventArgs e)
+        {
+            if (img1 == null)
+            {
+                MessageBox.Show("Carregue uma imagem antes de aplicar o filtro Laplaciano.");
+                return;
+            }
+
+            Bitmap comMediana = AplicarFiltroMediana((Bitmap)img1.Clone(), 3);
+            Bitmap cinza = ConverterParaEscalaDeCinza(comMediana);
+            Bitmap resultado = AplicarFiltroLaplaciano(cinza);
+            img1 = resultado;
+            pictureBoxResult.Image = resultado;
+        }
+        private Bitmap AplicarFiltroLaplaciano(Bitmap img)
+        {
+            int[,] laplaciano = new int[,]
+            {
+        {  0, -1,  0 },
+        { -1,  4, -1 },
+        {  0, -1,  0 }
+            };
+
+            return AplicarFiltroSimples(img, laplaciano);
+        }
+        private Bitmap AplicarFiltroPassaAlta(Bitmap img, int[,] gx, int[,] gy)
+        {
+            Bitmap resultado = new Bitmap(img.Width, img.Height);
+
+            for (int y = 1; y < img.Height - 1; y++)
+            {
+                for (int x = 1; x < img.Width - 1; x++)
+                {
+                    int somaGx = 0;
+                    int somaGy = 0;
+
+                    for (int j = -1; j <= 1; j++)
+                    {
+                        for (int i = -1; i <= 1; i++)
+                        {
+                            Color pixel = img.GetPixel(x + i, y + j);
+                            int intensidade = pixel.R; // a imagem já está em escala de cinza
+
+                            somaGx += intensidade * gx[j + 1, i + 1];
+                            somaGy += intensidade * gy[j + 1, i + 1];
+                        }
+                    }
+
+                    int valor = (int)Math.Sqrt(somaGx * somaGx + somaGy * somaGy);
+                    valor = Math.Min(255, Math.Max(0, valor)); // clamp de 0 a 255
+
+                    resultado.SetPixel(x, y, Color.FromArgb(valor, valor, valor));
+                }
+            }
+
+            return resultado;
+        }
+        private Bitmap AplicarFiltroSimples(Bitmap img, int[,] mascara)
+        {
+            Bitmap resultado = new Bitmap(img.Width, img.Height);
+
+            for (int y = 1; y < img.Height - 1; y++)
+            {
+                for (int x = 1; x < img.Width - 1; x++)
+                {
+                    int soma = 0;
+
+                    for (int j = -1; j <= 1; j++)
+                    {
+                        for (int i = -1; i <= 1; i++)
+                        {
+                            Color pixel = img.GetPixel(x + i, y + j);
+                            int intensidade = pixel.R;
+
+                            soma += intensidade * mascara[j + 1, i + 1];
+                        }
+                    }
+
+                    soma = Math.Min(255, Math.Max(0, soma)); // clamp para não estourar os limites
+
+                    resultado.SetPixel(x, y, Color.FromArgb(soma, soma, soma));
+                }
+            }
+
+            return resultado;
+        }
+
 
         private Bitmap MesclarImagens(Bitmap imgA, Bitmap imgB, bool isAddition)
         {

@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btImg1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,29 +57,38 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnReduce = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnMult = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnLeft = new System.Windows.Forms.Button();
             this.btnRight = new System.Windows.Forms.Button();
             this.btnDifference = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
             this.txtLimiar = new System.Windows.Forms.TextBox();
             this.btnLimiar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.btnNOT = new System.Windows.Forms.Button();
             this.btnOR = new System.Windows.Forms.Button();
             this.btnXOR = new System.Windows.Forms.Button();
             this.btnAND = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
             this.txtBlending = new System.Windows.Forms.TextBox();
             this.btnBlending = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.chartOrigImage = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartEqualizedImage = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
             this.btnEqualização = new System.Windows.Forms.Button();
             this.btnHistograma = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -98,14 +107,6 @@
             this.btnMIN = new System.Windows.Forms.Button();
             this.btnMEAN = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnMult = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btnBaixar = new System.Windows.Forms.Button();
@@ -115,7 +116,14 @@
             this.label24 = new System.Windows.Forms.Label();
             this.btnMediaDuasImagens = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.btnPrewitt = new System.Windows.Forms.Button();
+            this.btnSobel = new System.Windows.Forms.Button();
+            this.btnLaplaciano = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
             this.panel1.SuspendLayout();
@@ -134,6 +142,7 @@
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel13.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // btImg1
@@ -401,6 +410,31 @@
             this.panel2.Size = new System.Drawing.Size(195, 210);
             this.panel2.TabIndex = 21;
             // 
+            // btnMult
+            // 
+            this.btnMult.BackColor = System.Drawing.Color.White;
+            this.btnMult.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMult.ForeColor = System.Drawing.Color.Black;
+            this.btnMult.Location = new System.Drawing.Point(7, 86);
+            this.btnMult.Name = "btnMult";
+            this.btnMult.Size = new System.Drawing.Size(91, 24);
+            this.btnMult.TabIndex = 12;
+            this.btnMult.Text = "Multiplicar";
+            this.btnMult.UseVisualStyleBackColor = false;
+            this.btnMult.Click += new System.EventHandler(this.btnMult_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(4, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(23, 15);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "02)";
+            // 
             // btnLeft
             // 
             this.btnLeft.BackColor = System.Drawing.Color.White;
@@ -456,6 +490,30 @@
             this.panel4.Size = new System.Drawing.Size(194, 82);
             this.panel4.TabIndex = 24;
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(7, 31);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(23, 15);
+            this.label22.TabIndex = 30;
+            this.label22.Text = "06)";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(7, 57);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(23, 15);
+            this.label21.TabIndex = 29;
+            this.label21.Text = "07)";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -481,6 +539,18 @@
             this.panel5.Size = new System.Drawing.Size(194, 36);
             this.panel5.TabIndex = 23;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(3, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(23, 15);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "05)";
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Transparent;
@@ -495,6 +565,18 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(194, 60);
             this.panel7.TabIndex = 25;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(3, 7);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(23, 15);
+            this.label20.TabIndex = 28;
+            this.label20.Text = "13)";
             // 
             // txtLimiar
             // 
@@ -545,6 +627,18 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(194, 92);
             this.panel8.TabIndex = 26;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(3, 6);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(23, 15);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "11)";
             // 
             // btnNOT
             // 
@@ -625,6 +719,18 @@
             this.panel9.Size = new System.Drawing.Size(193, 59);
             this.panel9.TabIndex = 28;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Location = new System.Drawing.Point(2, 6);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(23, 15);
+            this.label19.TabIndex = 28;
+            this.label19.Text = "09)";
+            // 
             // txtBlending
             // 
             this.txtBlending.Font = new System.Drawing.Font("Times New Roman", 9.75F);
@@ -664,17 +770,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartOrigImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea5.Name = "ChartArea1";
-            this.chartOrigImage.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartOrigImage.Legends.Add(legend5);
+            chartArea9.Name = "ChartArea1";
+            this.chartOrigImage.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chartOrigImage.Legends.Add(legend9);
             this.chartOrigImage.Location = new System.Drawing.Point(3, 42);
             this.chartOrigImage.Name = "chartOrigImage";
             this.chartOrigImage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartOrigImage.Series.Add(series5);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chartOrigImage.Series.Add(series9);
             this.chartOrigImage.Size = new System.Drawing.Size(393, 212);
             this.chartOrigImage.TabIndex = 29;
             this.chartOrigImage.Text = "Histogran of image";
@@ -682,17 +788,17 @@
             // chartEqualizedImage
             // 
             this.chartEqualizedImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea6.Name = "ChartArea1";
-            this.chartEqualizedImage.ChartAreas.Add(chartArea6);
-            legend6.Name = "Histogran of image";
-            this.chartEqualizedImage.Legends.Add(legend6);
+            chartArea10.Name = "ChartArea1";
+            this.chartEqualizedImage.ChartAreas.Add(chartArea10);
+            legend10.Name = "Histogran of image";
+            this.chartEqualizedImage.Legends.Add(legend10);
             this.chartEqualizedImage.Location = new System.Drawing.Point(3, 277);
             this.chartEqualizedImage.Name = "chartEqualizedImage";
             this.chartEqualizedImage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Histogran of image";
-            series6.Name = "Series1";
-            this.chartEqualizedImage.Series.Add(series6);
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Histogran of image";
+            series10.Name = "Series1";
+            this.chartEqualizedImage.Series.Add(series10);
             this.chartEqualizedImage.Size = new System.Drawing.Size(393, 217);
             this.chartEqualizedImage.TabIndex = 30;
             this.chartEqualizedImage.Text = "chart2";
@@ -712,6 +818,18 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(401, 508);
             this.panel10.TabIndex = 24;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(6, 258);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(23, 15);
+            this.label26.TabIndex = 32;
+            this.label26.Text = "12)";
             // 
             // btnEqualização
             // 
@@ -743,13 +861,17 @@
             // 
             this.panel11.BackColor = System.Drawing.Color.Transparent;
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.label28);
+            this.panel11.Controls.Add(this.label32);
             this.panel11.Controls.Add(this.panel12);
+            this.panel11.Controls.Add(this.panel15);
             this.panel11.Controls.Add(this.label13);
+            this.panel11.Controls.Add(this.cbxTamMatriz);
             this.panel11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panel11.Location = new System.Drawing.Point(881, 4);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(268, 242);
+            this.panel11.Size = new System.Drawing.Size(268, 333);
             this.panel11.TabIndex = 22;
             // 
             // panel12
@@ -764,16 +886,15 @@
             this.panel12.Controls.Add(this.btnSuavizacao);
             this.panel12.Controls.Add(this.btnOrder);
             this.panel12.Controls.Add(this.btnMediana);
-            this.panel12.Controls.Add(this.cbxTamMatriz);
             this.panel12.Controls.Add(this.label12);
             this.panel12.Controls.Add(this.btnMAX);
             this.panel12.Controls.Add(this.btnMIN);
             this.panel12.Controls.Add(this.btnMEAN);
             this.panel12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel12.Location = new System.Drawing.Point(11, 42);
+            this.panel12.Location = new System.Drawing.Point(11, 54);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(242, 183);
+            this.panel12.Size = new System.Drawing.Size(242, 155);
             this.panel12.TabIndex = 22;
             // 
             // label18
@@ -782,7 +903,7 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(6, 151);
+            this.label18.Location = new System.Drawing.Point(10, 130);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(23, 15);
             this.label18.TabIndex = 21;
@@ -793,7 +914,7 @@
             this.btnGaussiano.BackColor = System.Drawing.Color.White;
             this.btnGaussiano.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGaussiano.ForeColor = System.Drawing.Color.Black;
-            this.btnGaussiano.Location = new System.Drawing.Point(33, 146);
+            this.btnGaussiano.Location = new System.Drawing.Point(37, 125);
             this.btnGaussiano.Name = "btnGaussiano";
             this.btnGaussiano.Size = new System.Drawing.Size(97, 24);
             this.btnGaussiano.TabIndex = 20;
@@ -807,7 +928,7 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(6, 121);
+            this.label17.Location = new System.Drawing.Point(10, 100);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(23, 15);
             this.label17.TabIndex = 19;
@@ -819,7 +940,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(6, 91);
+            this.label16.Location = new System.Drawing.Point(10, 70);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(23, 15);
             this.label16.TabIndex = 18;
@@ -831,7 +952,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(6, 61);
+            this.label14.Location = new System.Drawing.Point(10, 40);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(23, 15);
             this.label14.TabIndex = 17;
@@ -842,7 +963,7 @@
             this.btnSuavizacao.BackColor = System.Drawing.Color.White;
             this.btnSuavizacao.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuavizacao.ForeColor = System.Drawing.Color.Black;
-            this.btnSuavizacao.Location = new System.Drawing.Point(33, 116);
+            this.btnSuavizacao.Location = new System.Drawing.Point(37, 95);
             this.btnSuavizacao.Name = "btnSuavizacao";
             this.btnSuavizacao.Size = new System.Drawing.Size(198, 24);
             this.btnSuavizacao.TabIndex = 15;
@@ -855,7 +976,7 @@
             this.btnOrder.BackColor = System.Drawing.Color.White;
             this.btnOrder.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.ForeColor = System.Drawing.Color.Black;
-            this.btnOrder.Location = new System.Drawing.Point(33, 86);
+            this.btnOrder.Location = new System.Drawing.Point(37, 65);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(97, 24);
             this.btnOrder.TabIndex = 14;
@@ -868,7 +989,7 @@
             this.btnMediana.BackColor = System.Drawing.Color.White;
             this.btnMediana.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMediana.ForeColor = System.Drawing.Color.Black;
-            this.btnMediana.Location = new System.Drawing.Point(33, 56);
+            this.btnMediana.Location = new System.Drawing.Point(37, 35);
             this.btnMediana.Name = "btnMediana";
             this.btnMediana.Size = new System.Drawing.Size(97, 24);
             this.btnMediana.TabIndex = 13;
@@ -883,7 +1004,7 @@
             "3",
             "5",
             "7"});
-            this.cbxTamMatriz.Location = new System.Drawing.Point(33, 2);
+            this.cbxTamMatriz.Location = new System.Drawing.Point(191, 27);
             this.cbxTamMatriz.Name = "cbxTamMatriz";
             this.cbxTamMatriz.Size = new System.Drawing.Size(62, 21);
             this.cbxTamMatriz.TabIndex = 12;
@@ -894,7 +1015,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(6, 3);
+            this.label12.Location = new System.Drawing.Point(7, 10);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(23, 15);
             this.label12.TabIndex = 8;
@@ -905,7 +1026,7 @@
             this.btnMAX.BackColor = System.Drawing.Color.White;
             this.btnMAX.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMAX.ForeColor = System.Drawing.Color.Black;
-            this.btnMAX.Location = new System.Drawing.Point(33, 26);
+            this.btnMAX.Location = new System.Drawing.Point(37, 5);
             this.btnMAX.Name = "btnMAX";
             this.btnMAX.Size = new System.Drawing.Size(62, 24);
             this.btnMAX.TabIndex = 10;
@@ -918,7 +1039,7 @@
             this.btnMIN.BackColor = System.Drawing.Color.White;
             this.btnMIN.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMIN.ForeColor = System.Drawing.Color.Black;
-            this.btnMIN.Location = new System.Drawing.Point(169, 27);
+            this.btnMIN.Location = new System.Drawing.Point(173, 6);
             this.btnMIN.Name = "btnMIN";
             this.btnMIN.Size = new System.Drawing.Size(62, 24);
             this.btnMIN.TabIndex = 11;
@@ -931,7 +1052,7 @@
             this.btnMEAN.BackColor = System.Drawing.Color.White;
             this.btnMEAN.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMEAN.ForeColor = System.Drawing.Color.Black;
-            this.btnMEAN.Location = new System.Drawing.Point(101, 26);
+            this.btnMEAN.Location = new System.Drawing.Point(105, 5);
             this.btnMEAN.Name = "btnMEAN";
             this.btnMEAN.Size = new System.Drawing.Size(62, 24);
             this.btnMEAN.TabIndex = 9;
@@ -945,108 +1066,11 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(8, 2);
+            this.label13.Location = new System.Drawing.Point(3, 4);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(255, 30);
+            this.label13.Size = new System.Drawing.Size(255, 15);
             this.label13.TabIndex = 7;
-            this.label13.Text = "Filtragem no domínio espacial com convulação\r\n(Filtros Passa-Baixa):\r\n";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(3, 6);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(23, 15);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "11)";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(2, 6);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(23, 15);
-            this.label19.TabIndex = 28;
-            this.label19.Text = "09)";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(3, 7);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(23, 15);
-            this.label20.TabIndex = 28;
-            this.label20.Text = "13)";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(7, 57);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(23, 15);
-            this.label21.TabIndex = 29;
-            this.label21.Text = "07)";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(7, 31);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(23, 15);
-            this.label22.TabIndex = 30;
-            this.label22.Text = "06)";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(3, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(23, 15);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "05)";
-            // 
-            // btnMult
-            // 
-            this.btnMult.BackColor = System.Drawing.Color.White;
-            this.btnMult.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMult.ForeColor = System.Drawing.Color.Black;
-            this.btnMult.Location = new System.Drawing.Point(7, 86);
-            this.btnMult.Name = "btnMult";
-            this.btnMult.Size = new System.Drawing.Size(91, 24);
-            this.btnMult.TabIndex = 12;
-            this.btnMult.Text = "Multiplicar";
-            this.btnMult.UseVisualStyleBackColor = false;
-            this.btnMult.Click += new System.EventHandler(this.btnMult_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(4, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 15);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "02)";
+            this.label13.Text = "Filtragem no domínio espacial com convulação";
             // 
             // panel3
             // 
@@ -1162,17 +1186,108 @@
             this.label25.TabIndex = 13;
             this.label25.Text = " Combinação Linear\r\n";
             // 
-            // label26
+            // label32
             // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(6, 258);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(23, 15);
-            this.label26.TabIndex = 32;
-            this.label26.Text = "12)";
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.Transparent;
+            this.label32.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.Black;
+            this.label32.Location = new System.Drawing.Point(9, 219);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(133, 15);
+            this.label32.TabIndex = 7;
+            this.label32.Text = "Filtragem de Passa-Alta";
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.Transparent;
+            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel15.Controls.Add(this.btnLaplaciano);
+            this.panel15.Controls.Add(this.btnSobel);
+            this.panel15.Controls.Add(this.btnPrewitt);
+            this.panel15.Controls.Add(this.label27);
+            this.panel15.Controls.Add(this.label31);
+            this.panel15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel15.Location = new System.Drawing.Point(11, 240);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(242, 78);
+            this.panel15.TabIndex = 22;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.Black;
+            this.label31.Location = new System.Drawing.Point(6, 11);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(23, 15);
+            this.label31.TabIndex = 8;
+            this.label31.Text = "19)";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Transparent;
+            this.label27.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(6, 45);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(23, 15);
+            this.label27.TabIndex = 9;
+            this.label27.Text = "20)";
+            // 
+            // btnPrewitt
+            // 
+            this.btnPrewitt.BackColor = System.Drawing.Color.White;
+            this.btnPrewitt.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrewitt.ForeColor = System.Drawing.Color.Black;
+            this.btnPrewitt.Location = new System.Drawing.Point(31, 7);
+            this.btnPrewitt.Name = "btnPrewitt";
+            this.btnPrewitt.Size = new System.Drawing.Size(97, 24);
+            this.btnPrewitt.TabIndex = 22;
+            this.btnPrewitt.Text = "Prewitt";
+            this.btnPrewitt.UseVisualStyleBackColor = false;
+            this.btnPrewitt.Click += new System.EventHandler(this.btnPrewitt_Click);
+            // 
+            // btnSobel
+            // 
+            this.btnSobel.BackColor = System.Drawing.Color.White;
+            this.btnSobel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSobel.ForeColor = System.Drawing.Color.Black;
+            this.btnSobel.Location = new System.Drawing.Point(134, 8);
+            this.btnSobel.Name = "btnSobel";
+            this.btnSobel.Size = new System.Drawing.Size(97, 24);
+            this.btnSobel.TabIndex = 23;
+            this.btnSobel.Text = "Sobel";
+            this.btnSobel.UseVisualStyleBackColor = false;
+            this.btnSobel.Click += new System.EventHandler(this.btnSobel_Click);
+            // 
+            // btnLaplaciano
+            // 
+            this.btnLaplaciano.BackColor = System.Drawing.Color.White;
+            this.btnLaplaciano.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLaplaciano.ForeColor = System.Drawing.Color.Black;
+            this.btnLaplaciano.Location = new System.Drawing.Point(31, 40);
+            this.btnLaplaciano.Name = "btnLaplaciano";
+            this.btnLaplaciano.Size = new System.Drawing.Size(97, 24);
+            this.btnLaplaciano.TabIndex = 24;
+            this.btnLaplaciano.Text = "Laplaciano";
+            this.btnLaplaciano.UseVisualStyleBackColor = false;
+            this.btnLaplaciano.Click += new System.EventHandler(this.btnLaplaciano_Click);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.Transparent;
+            this.label28.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(9, 30);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(122, 15);
+            this.label28.TabIndex = 23;
+            this.label28.Text = "Filtragem Passa-Baixa";
             // 
             // Form1
             // 
@@ -1233,6 +1348,8 @@
             this.panel6.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1322,6 +1439,14 @@
         private System.Windows.Forms.Button btnMediaDuasImagens;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Button btnLaplaciano;
+        private System.Windows.Forms.Button btnSobel;
+        private System.Windows.Forms.Button btnPrewitt;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label28;
     }
 }
 
