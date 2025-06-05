@@ -254,13 +254,13 @@ namespace ImageLoader
         {
             if (img1 == null || img2 == null)
             {
-                MessageBox.Show("Carregue duas imagens para realizar a média.");
+                MessageBox.Show("Carregue duas imagens para realizar a média.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (img1.Width != img2.Width || img1.Height != img2.Height)
             {
-                MessageBox.Show("As imagens devem ter o mesmo tamanho.");
+                MessageBox.Show("As imagens devem ter o mesmo tamanho.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -518,7 +518,7 @@ namespace ImageLoader
         {
             if (img1 == null)
             {
-                MessageBox.Show("Carregue uma imagem antes de visualizar o histograma.");
+                MessageBox.Show("Carregue uma imagem antes de visualizar o histograma.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -553,7 +553,7 @@ namespace ImageLoader
         {
             if (img1 == null)
             {
-                MessageBox.Show("Carregue uma imagem antes de aplicar a equalização.");
+                MessageBox.Show("Carregue uma imagem antes de aplicar a equalização.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -634,7 +634,7 @@ namespace ImageLoader
         {
             if (img1 == null || cbxTamMatriz.SelectedItem == null)
             {
-                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.");
+                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -649,7 +649,7 @@ namespace ImageLoader
         {
             if (img1 == null || cbxTamMatriz.SelectedItem == null)
             {
-                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.");
+                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -664,7 +664,7 @@ namespace ImageLoader
         {
             if (img1 == null || cbxTamMatriz.SelectedItem == null)
             {
-                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.");
+                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -772,7 +772,7 @@ namespace ImageLoader
         {
             if (img1 == null || cbxTamMatriz.SelectedItem == null)
             {
-                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.");
+                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             int tamanho = int.Parse(cbxTamMatriz.SelectedItem.ToString());
@@ -828,7 +828,7 @@ namespace ImageLoader
         {
             if (img1 == null || cbxTamMatriz.SelectedItem == null)
             {
-                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.");
+                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             int tamanho = int.Parse(cbxTamMatriz.SelectedItem.ToString());
@@ -884,7 +884,7 @@ namespace ImageLoader
         {
             if (img1 == null || cbxTamMatriz.SelectedItem == null)
             {
-                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.");
+                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             int tamanho = int.Parse(cbxTamMatriz.SelectedItem.ToString());
@@ -938,7 +938,7 @@ namespace ImageLoader
         {
             if (img1 == null || cbxTamMatriz.SelectedItem == null)
             {
-                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.");
+                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             int tamanho = int.Parse(cbxTamMatriz.SelectedItem.ToString());
@@ -1031,7 +1031,7 @@ namespace ImageLoader
         {
             if (img1 == null)
             {
-                MessageBox.Show("Carregue uma imagem antes de aplicar o filtro Prewitt.");
+                MessageBox.Show("Carregue uma imagem antes de aplicar o filtro Prewitt.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -1065,7 +1065,7 @@ namespace ImageLoader
         {
             if (img1 == null)
             {
-                MessageBox.Show("Carregue uma imagem antes de aplicar o filtro Sobel.");
+                MessageBox.Show("Carregue uma imagem antes de aplicar o filtro Sobel.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -1099,7 +1099,7 @@ namespace ImageLoader
         {
             if (img1 == null)
             {
-                MessageBox.Show("Carregue uma imagem antes de aplicar o filtro Laplaciano.");
+                MessageBox.Show("Carregue uma imagem antes de aplicar o filtro Laplaciano.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -1180,6 +1180,222 @@ namespace ImageLoader
             }
 
             return resultado;
+        }
+
+        
+
+        private void btnDilatação_Click(object sender, EventArgs e)
+        {
+            AplicarOperacaoMorfologica("Dilatação");
+        }
+
+        private void btnAbertura_Click(object sender, EventArgs e)
+        {
+            AplicarOperacaoMorfologica("Abertura");
+        }
+
+        private void btnErosao_Click(object sender, EventArgs e)
+        {
+            AplicarOperacaoMorfologica("Erosão");
+        }
+
+        private void btnContorno_Click(object sender, EventArgs e)
+        {
+            AplicarOperacaoMorfologica("Contorno");
+        }
+
+        private void btnFechamento_Click(object sender, EventArgs e)
+        {
+            AplicarOperacaoMorfologica("Fechamento");
+        }
+
+        private Bitmap AplicarDilatacao(Bitmap img, bool[,] elemento)
+        {
+            int largura = img.Width;
+            int altura = img.Height;
+            int tamanho = elemento.GetLength(0);
+            int meio = tamanho / 2;
+
+            Bitmap resultado = new Bitmap(largura, altura);
+
+            for (int y = 0; y < altura; y++)
+            {
+                for (int x = 0; x < largura; x++)
+                {
+                    bool pixelBranco = false;
+
+                    for (int i = -meio; i <= meio; i++)
+                    {
+                        for (int j = -meio; j <= meio; j++)
+                        {
+                            int yy = y + i;
+                            int xx = x + j;
+
+                            if (xx >= 0 && yy >= 0 && xx < largura && yy < altura && elemento[i + meio, j + meio])
+                            {
+                                Color corVizinho = img.GetPixel(xx, yy);
+                                if (corVizinho.R == 255) // Branco
+                                {
+                                    pixelBranco = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (pixelBranco) break;
+                    }
+
+                    resultado.SetPixel(x, y, pixelBranco ? Color.White : Color.Black);
+                }
+            }
+
+            return resultado;
+        }
+        private Bitmap AplicarErosao(Bitmap img, bool[,] elemento)
+        {
+            int largura = img.Width;
+            int altura = img.Height;
+            int tamanho = elemento.GetLength(0);
+            int meio = tamanho / 2;
+
+            Bitmap resultado = new Bitmap(largura, altura);
+
+            for (int y = 0; y < altura; y++)
+            {
+                for (int x = 0; x < largura; x++)
+                {
+                    bool manterPreto = false;
+
+                    for (int i = -meio; i <= meio; i++)
+                    {
+                        for (int j = -meio; j <= meio; j++)
+                        {
+                            int yy = y + i;
+                            int xx = x + j;
+
+                            if (xx >= 0 && yy >= 0 && xx < largura && yy < altura && elemento[i + meio, j + meio])
+                            {
+                                Color corVizinho = img.GetPixel(xx, yy);
+                                if (corVizinho.R == 0) // Preto
+                                {
+                                    manterPreto = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (manterPreto) break;
+                    }
+
+                    resultado.SetPixel(x, y, manterPreto ? Color.Black : Color.White);
+                }
+            }
+
+            return resultado;
+        }
+        private Bitmap SubtrairImagens(Bitmap original, Bitmap modificada)
+        {
+            int largura = original.Width;
+            int altura = original.Height;
+
+            Bitmap resultado = new Bitmap(largura, altura);
+
+            for (int y = 0; y < altura; y++)
+            {
+                for (int x = 0; x < largura; x++)
+                {
+                    int corOriginal = original.GetPixel(x, y).R;
+                    int corModificada = modificada.GetPixel(x, y).R;
+
+                    int valor = corOriginal - corModificada;
+                    valor = Math.Max(0, Math.Min(255, valor));
+
+                    resultado.SetPixel(x, y, Color.FromArgb(valor, valor, valor));
+                }
+            }
+
+            return resultado;
+        }
+
+        private void AplicarOperacaoMorfologica(string operacao)
+        {
+            if (img1 == null)
+            {
+                MessageBox.Show("Carregue uma imagem para aplicar a operação morfológica.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (cbxTamanhoMatrixMorfologicas.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione o tamanho da matriz (3, 5 ou 7).", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (cbxFormatoElemento.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione o formato do elemento estruturante (Cruz, Quadrado, Linha, Diamante)." , "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int tamanho = int.Parse(cbxTamanhoMatrixMorfologicas.SelectedItem.ToString());
+            string formato = cbxFormatoElemento.SelectedItem.ToString();
+
+            bool[,] elemento = GerarElementoEstruturante(tamanho, formato);
+
+            Bitmap resultado = null;
+
+            switch (operacao)
+            {
+                case "Dilatação":
+                    resultado = AplicarDilatacao(img1, elemento);
+                    break;
+                case "Erosão":
+                    resultado = AplicarErosao(img1, elemento);
+                    break;
+                case "Abertura":
+                    resultado = AplicarDilatacao(AplicarErosao(img1, elemento), elemento);
+                    break;
+                case "Fechamento":
+                    resultado = AplicarErosao(AplicarDilatacao(img1, elemento), elemento);
+                    break;
+                case "Contorno":
+                    Bitmap erosao = AplicarErosao(img1, elemento);
+                    resultado = SubtrairImagens(img1, erosao);
+                    break;
+            }
+
+            img1 = resultado;
+            pictureBoxResult.Image = resultado;
+        }       
+        private bool[,] GerarElementoEstruturante(int tamanho, string formato)
+        {
+            bool[,] elemento = new bool[tamanho, tamanho];
+            int meio = tamanho / 2;
+
+            for (int y = 0; y < tamanho; y++)
+            {
+                for (int x = 0; x < tamanho; x++)
+                {
+                    switch (formato)
+                    {
+                        case "Quadrado":
+                            elemento[y, x] = true;
+                            break;
+
+                        case "Cruz":
+                            elemento[y, x] = (x == meio || y == meio);
+                            break;
+
+                        case "Linha":
+                            elemento[y, x] = (y == meio);
+                            break;
+
+                        case "Diamante":
+                            elemento[y, x] = Math.Abs(x - meio) + Math.Abs(y - meio) <= meio;
+                            break;
+                    }
+                }
+            }
+
+            return elemento;
         }
 
 

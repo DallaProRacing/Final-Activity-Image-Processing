@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btImg1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -92,6 +92,8 @@
             this.btnEqualização = new System.Windows.Forms.Button();
             this.btnHistograma = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.btnGaussiano = new System.Windows.Forms.Button();
@@ -101,12 +103,18 @@
             this.btnSuavizacao = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnMediana = new System.Windows.Forms.Button();
-            this.cbxTamMatriz = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnMAX = new System.Windows.Forms.Button();
             this.btnMIN = new System.Windows.Forms.Button();
             this.btnMEAN = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.btnLaplaciano = new System.Windows.Forms.Button();
+            this.btnSobel = new System.Windows.Forms.Button();
+            this.btnPrewitt = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.cbxTamMatriz = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.btnBaixar = new System.Windows.Forms.Button();
@@ -116,14 +124,18 @@
             this.label24 = new System.Windows.Forms.Label();
             this.btnMediaDuasImagens = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.btnPrewitt = new System.Windows.Forms.Button();
-            this.btnSobel = new System.Windows.Forms.Button();
-            this.btnLaplaciano = new System.Windows.Forms.Button();
-            this.label28 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label33 = new System.Windows.Forms.Label();
+            this.cbxFormatoElemento = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.cbxTamanhoMatrixMorfologicas = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.btnContorno = new System.Windows.Forms.Button();
+            this.btnFechamento = new System.Windows.Forms.Button();
+            this.btnAbertura = new System.Windows.Forms.Button();
+            this.btnErosao = new System.Windows.Forms.Button();
+            this.btnDilatação = new System.Windows.Forms.Button();
+            this.label40 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
             this.panel1.SuspendLayout();
@@ -139,10 +151,11 @@
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel13.SuspendLayout();
-            this.panel15.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // btImg1
@@ -561,7 +574,7 @@
             this.panel7.Controls.Add(this.label9);
             this.panel7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel7.Location = new System.Drawing.Point(468, 518);
+            this.panel7.Location = new System.Drawing.Point(468, 530);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(194, 60);
             this.panel7.TabIndex = 25;
@@ -770,35 +783,35 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartOrigImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea9.Name = "ChartArea1";
-            this.chartOrigImage.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chartOrigImage.Legends.Add(legend9);
+            chartArea1.Name = "ChartArea1";
+            this.chartOrigImage.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartOrigImage.Legends.Add(legend1);
             this.chartOrigImage.Location = new System.Drawing.Point(3, 42);
             this.chartOrigImage.Name = "chartOrigImage";
             this.chartOrigImage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chartOrigImage.Series.Add(series9);
-            this.chartOrigImage.Size = new System.Drawing.Size(393, 212);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartOrigImage.Series.Add(series1);
+            this.chartOrigImage.Size = new System.Drawing.Size(393, 224);
             this.chartOrigImage.TabIndex = 29;
             this.chartOrigImage.Text = "Histogran of image";
             // 
             // chartEqualizedImage
             // 
             this.chartEqualizedImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea10.Name = "ChartArea1";
-            this.chartEqualizedImage.ChartAreas.Add(chartArea10);
-            legend10.Name = "Histogran of image";
-            this.chartEqualizedImage.Legends.Add(legend10);
-            this.chartEqualizedImage.Location = new System.Drawing.Point(3, 277);
+            chartArea2.Name = "ChartArea1";
+            this.chartEqualizedImage.ChartAreas.Add(chartArea2);
+            legend2.Name = "Histogran of image";
+            this.chartEqualizedImage.Legends.Add(legend2);
+            this.chartEqualizedImage.Location = new System.Drawing.Point(3, 290);
             this.chartEqualizedImage.Name = "chartEqualizedImage";
             this.chartEqualizedImage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series10.ChartArea = "ChartArea1";
-            series10.Legend = "Histogran of image";
-            series10.Name = "Series1";
-            this.chartEqualizedImage.Series.Add(series10);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Histogran of image";
+            series2.Name = "Series1";
+            this.chartEqualizedImage.Series.Add(series2);
             this.chartEqualizedImage.Size = new System.Drawing.Size(393, 217);
             this.chartEqualizedImage.TabIndex = 30;
             this.chartEqualizedImage.Text = "chart2";
@@ -816,7 +829,7 @@
             this.panel10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panel10.Location = new System.Drawing.Point(468, 4);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(401, 508);
+            this.panel10.Size = new System.Drawing.Size(401, 520);
             this.panel10.TabIndex = 24;
             // 
             // label26
@@ -873,6 +886,30 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(268, 333);
             this.panel11.TabIndex = 22;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.Transparent;
+            this.label28.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Black;
+            this.label28.Location = new System.Drawing.Point(9, 30);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(122, 15);
+            this.label28.TabIndex = 23;
+            this.label28.Text = "Filtragem Passa-Baixa";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.Transparent;
+            this.label32.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.Black;
+            this.label32.Location = new System.Drawing.Point(9, 219);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(133, 15);
+            this.label32.TabIndex = 7;
+            this.label32.Text = "Filtragem de Passa-Alta";
             // 
             // panel12
             // 
@@ -997,18 +1034,6 @@
             this.btnMediana.UseVisualStyleBackColor = false;
             this.btnMediana.Click += new System.EventHandler(this.btnMediana_Click);
             // 
-            // cbxTamMatriz
-            // 
-            this.cbxTamMatriz.FormattingEnabled = true;
-            this.cbxTamMatriz.Items.AddRange(new object[] {
-            "3",
-            "5",
-            "7"});
-            this.cbxTamMatriz.Location = new System.Drawing.Point(191, 27);
-            this.cbxTamMatriz.Name = "cbxTamMatriz";
-            this.cbxTamMatriz.Size = new System.Drawing.Size(62, 21);
-            this.cbxTamMatriz.TabIndex = 12;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -1060,6 +1085,85 @@
             this.btnMEAN.UseVisualStyleBackColor = false;
             this.btnMEAN.Click += new System.EventHandler(this.btnMEAN_Click);
             // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.Transparent;
+            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel15.Controls.Add(this.btnLaplaciano);
+            this.panel15.Controls.Add(this.btnSobel);
+            this.panel15.Controls.Add(this.btnPrewitt);
+            this.panel15.Controls.Add(this.label27);
+            this.panel15.Controls.Add(this.label31);
+            this.panel15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel15.Location = new System.Drawing.Point(11, 240);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(242, 78);
+            this.panel15.TabIndex = 22;
+            // 
+            // btnLaplaciano
+            // 
+            this.btnLaplaciano.BackColor = System.Drawing.Color.White;
+            this.btnLaplaciano.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLaplaciano.ForeColor = System.Drawing.Color.Black;
+            this.btnLaplaciano.Location = new System.Drawing.Point(31, 40);
+            this.btnLaplaciano.Name = "btnLaplaciano";
+            this.btnLaplaciano.Size = new System.Drawing.Size(97, 24);
+            this.btnLaplaciano.TabIndex = 24;
+            this.btnLaplaciano.Text = "Laplaciano";
+            this.btnLaplaciano.UseVisualStyleBackColor = false;
+            this.btnLaplaciano.Click += new System.EventHandler(this.btnLaplaciano_Click);
+            // 
+            // btnSobel
+            // 
+            this.btnSobel.BackColor = System.Drawing.Color.White;
+            this.btnSobel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSobel.ForeColor = System.Drawing.Color.Black;
+            this.btnSobel.Location = new System.Drawing.Point(134, 8);
+            this.btnSobel.Name = "btnSobel";
+            this.btnSobel.Size = new System.Drawing.Size(97, 24);
+            this.btnSobel.TabIndex = 23;
+            this.btnSobel.Text = "Sobel";
+            this.btnSobel.UseVisualStyleBackColor = false;
+            this.btnSobel.Click += new System.EventHandler(this.btnSobel_Click);
+            // 
+            // btnPrewitt
+            // 
+            this.btnPrewitt.BackColor = System.Drawing.Color.White;
+            this.btnPrewitt.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrewitt.ForeColor = System.Drawing.Color.Black;
+            this.btnPrewitt.Location = new System.Drawing.Point(31, 7);
+            this.btnPrewitt.Name = "btnPrewitt";
+            this.btnPrewitt.Size = new System.Drawing.Size(97, 24);
+            this.btnPrewitt.TabIndex = 22;
+            this.btnPrewitt.Text = "Prewitt";
+            this.btnPrewitt.UseVisualStyleBackColor = false;
+            this.btnPrewitt.Click += new System.EventHandler(this.btnPrewitt_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Transparent;
+            this.label27.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Black;
+            this.label27.Location = new System.Drawing.Point(6, 45);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(23, 15);
+            this.label27.TabIndex = 9;
+            this.label27.Text = "20)";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.Black;
+            this.label31.Location = new System.Drawing.Point(6, 11);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(23, 15);
+            this.label31.TabIndex = 8;
+            this.label31.Text = "19)";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -1071,6 +1175,18 @@
             this.label13.Size = new System.Drawing.Size(255, 15);
             this.label13.TabIndex = 7;
             this.label13.Text = "Filtragem no domínio espacial com convulação";
+            // 
+            // cbxTamMatriz
+            // 
+            this.cbxTamMatriz.FormattingEnabled = true;
+            this.cbxTamMatriz.Items.AddRange(new object[] {
+            "3",
+            "5",
+            "7"});
+            this.cbxTamMatriz.Location = new System.Drawing.Point(191, 27);
+            this.cbxTamMatriz.Name = "cbxTamMatriz";
+            this.cbxTamMatriz.Size = new System.Drawing.Size(62, 21);
+            this.cbxTamMatriz.TabIndex = 12;
             // 
             // panel3
             // 
@@ -1186,114 +1302,172 @@
             this.label25.TabIndex = 13;
             this.label25.Text = " Combinação Linear\r\n";
             // 
-            // label32
+            // panel14
             // 
-            this.label32.AutoSize = true;
-            this.label32.BackColor = System.Drawing.Color.Transparent;
-            this.label32.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.Color.Black;
-            this.label32.Location = new System.Drawing.Point(9, 219);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(133, 15);
-            this.label32.TabIndex = 7;
-            this.label32.Text = "Filtragem de Passa-Alta";
+            this.panel14.BackColor = System.Drawing.Color.Transparent;
+            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel14.Controls.Add(this.label33);
+            this.panel14.Controls.Add(this.cbxFormatoElemento);
+            this.panel14.Controls.Add(this.label30);
+            this.panel14.Controls.Add(this.cbxTamanhoMatrixMorfologicas);
+            this.panel14.Controls.Add(this.label29);
+            this.panel14.Controls.Add(this.btnContorno);
+            this.panel14.Controls.Add(this.btnFechamento);
+            this.panel14.Controls.Add(this.btnAbertura);
+            this.panel14.Controls.Add(this.btnErosao);
+            this.panel14.Controls.Add(this.btnDilatação);
+            this.panel14.Controls.Add(this.label40);
+            this.panel14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel14.Location = new System.Drawing.Point(881, 345);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(268, 182);
+            this.panel14.TabIndex = 24;
             // 
-            // panel15
+            // label33
             // 
-            this.panel15.BackColor = System.Drawing.Color.Transparent;
-            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel15.Controls.Add(this.btnLaplaciano);
-            this.panel15.Controls.Add(this.btnSobel);
-            this.panel15.Controls.Add(this.btnPrewitt);
-            this.panel15.Controls.Add(this.label27);
-            this.panel15.Controls.Add(this.label31);
-            this.panel15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panel15.Location = new System.Drawing.Point(11, 240);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(242, 78);
-            this.panel15.TabIndex = 22;
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Black;
+            this.label33.Location = new System.Drawing.Point(3, 59);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(187, 15);
+            this.label33.TabIndex = 32;
+            this.label33.Text = "Formato do elemento estruturado ";
             // 
-            // label31
+            // cbxFormatoElemento
             // 
-            this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.Transparent;
-            this.label31.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.Black;
-            this.label31.Location = new System.Drawing.Point(6, 11);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(23, 15);
-            this.label31.TabIndex = 8;
-            this.label31.Text = "19)";
+            this.cbxFormatoElemento.FormattingEnabled = true;
+            this.cbxFormatoElemento.Items.AddRange(new object[] {
+            "Cruz",
+            "Quadrado",
+            "Linha",
+            "Diamante"});
+            this.cbxFormatoElemento.Location = new System.Drawing.Point(191, 57);
+            this.cbxFormatoElemento.Name = "cbxFormatoElemento";
+            this.cbxFormatoElemento.Size = new System.Drawing.Size(62, 21);
+            this.cbxFormatoElemento.TabIndex = 31;
             // 
-            // label27
+            // label30
             // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.Transparent;
-            this.label27.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(6, 45);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(23, 15);
-            this.label27.TabIndex = 9;
-            this.label27.Text = "20)";
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
+            this.label30.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.Black;
+            this.label30.Location = new System.Drawing.Point(3, 35);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(109, 15);
+            this.label30.TabIndex = 30;
+            this.label30.Text = "Tamanho da Matriz";
             // 
-            // btnPrewitt
+            // cbxTamanhoMatrixMorfologicas
             // 
-            this.btnPrewitt.BackColor = System.Drawing.Color.White;
-            this.btnPrewitt.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrewitt.ForeColor = System.Drawing.Color.Black;
-            this.btnPrewitt.Location = new System.Drawing.Point(31, 7);
-            this.btnPrewitt.Name = "btnPrewitt";
-            this.btnPrewitt.Size = new System.Drawing.Size(97, 24);
-            this.btnPrewitt.TabIndex = 22;
-            this.btnPrewitt.Text = "Prewitt";
-            this.btnPrewitt.UseVisualStyleBackColor = false;
-            this.btnPrewitt.Click += new System.EventHandler(this.btnPrewitt_Click);
+            this.cbxTamanhoMatrixMorfologicas.FormattingEnabled = true;
+            this.cbxTamanhoMatrixMorfologicas.Items.AddRange(new object[] {
+            "3",
+            "5",
+            "7"});
+            this.cbxTamanhoMatrixMorfologicas.Location = new System.Drawing.Point(191, 29);
+            this.cbxTamanhoMatrixMorfologicas.Name = "cbxTamanhoMatrixMorfologicas";
+            this.cbxTamanhoMatrixMorfologicas.Size = new System.Drawing.Size(62, 21);
+            this.cbxTamanhoMatrixMorfologicas.TabIndex = 24;
             // 
-            // btnSobel
+            // label29
             // 
-            this.btnSobel.BackColor = System.Drawing.Color.White;
-            this.btnSobel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSobel.ForeColor = System.Drawing.Color.Black;
-            this.btnSobel.Location = new System.Drawing.Point(134, 8);
-            this.btnSobel.Name = "btnSobel";
-            this.btnSobel.Size = new System.Drawing.Size(97, 24);
-            this.btnSobel.TabIndex = 23;
-            this.btnSobel.Text = "Sobel";
-            this.btnSobel.UseVisualStyleBackColor = false;
-            this.btnSobel.Click += new System.EventHandler(this.btnSobel_Click);
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.Black;
+            this.label29.Location = new System.Drawing.Point(2, 6);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(23, 15);
+            this.label29.TabIndex = 25;
+            this.label29.Text = "21)";
             // 
-            // btnLaplaciano
+            // btnContorno
             // 
-            this.btnLaplaciano.BackColor = System.Drawing.Color.White;
-            this.btnLaplaciano.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLaplaciano.ForeColor = System.Drawing.Color.Black;
-            this.btnLaplaciano.Location = new System.Drawing.Point(31, 40);
-            this.btnLaplaciano.Name = "btnLaplaciano";
-            this.btnLaplaciano.Size = new System.Drawing.Size(97, 24);
-            this.btnLaplaciano.TabIndex = 24;
-            this.btnLaplaciano.Text = "Laplaciano";
-            this.btnLaplaciano.UseVisualStyleBackColor = false;
-            this.btnLaplaciano.Click += new System.EventHandler(this.btnLaplaciano_Click);
+            this.btnContorno.BackColor = System.Drawing.Color.White;
+            this.btnContorno.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContorno.ForeColor = System.Drawing.Color.Black;
+            this.btnContorno.Location = new System.Drawing.Point(6, 142);
+            this.btnContorno.Name = "btnContorno";
+            this.btnContorno.Size = new System.Drawing.Size(97, 24);
+            this.btnContorno.TabIndex = 29;
+            this.btnContorno.Text = "Contorno";
+            this.btnContorno.UseVisualStyleBackColor = false;
+            this.btnContorno.Click += new System.EventHandler(this.btnContorno_Click);
             // 
-            // label28
+            // btnFechamento
             // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.Transparent;
-            this.label28.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(9, 30);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(122, 15);
-            this.label28.TabIndex = 23;
-            this.label28.Text = "Filtragem Passa-Baixa";
+            this.btnFechamento.BackColor = System.Drawing.Color.White;
+            this.btnFechamento.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFechamento.ForeColor = System.Drawing.Color.Black;
+            this.btnFechamento.Location = new System.Drawing.Point(117, 142);
+            this.btnFechamento.Name = "btnFechamento";
+            this.btnFechamento.Size = new System.Drawing.Size(97, 24);
+            this.btnFechamento.TabIndex = 28;
+            this.btnFechamento.Text = "Fechamento ";
+            this.btnFechamento.UseVisualStyleBackColor = false;
+            this.btnFechamento.Click += new System.EventHandler(this.btnFechamento_Click);
+            // 
+            // btnAbertura
+            // 
+            this.btnAbertura.BackColor = System.Drawing.Color.White;
+            this.btnAbertura.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbertura.ForeColor = System.Drawing.Color.Black;
+            this.btnAbertura.Location = new System.Drawing.Point(6, 110);
+            this.btnAbertura.Name = "btnAbertura";
+            this.btnAbertura.Size = new System.Drawing.Size(97, 24);
+            this.btnAbertura.TabIndex = 27;
+            this.btnAbertura.Text = "Abertura ";
+            this.btnAbertura.UseVisualStyleBackColor = false;
+            this.btnAbertura.Click += new System.EventHandler(this.btnAbertura_Click);
+            // 
+            // btnErosao
+            // 
+            this.btnErosao.BackColor = System.Drawing.Color.White;
+            this.btnErosao.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnErosao.ForeColor = System.Drawing.Color.Black;
+            this.btnErosao.Location = new System.Drawing.Point(117, 109);
+            this.btnErosao.Name = "btnErosao";
+            this.btnErosao.Size = new System.Drawing.Size(97, 24);
+            this.btnErosao.TabIndex = 26;
+            this.btnErosao.Text = "Erosão ";
+            this.btnErosao.UseVisualStyleBackColor = false;
+            this.btnErosao.Click += new System.EventHandler(this.btnErosao_Click);
+            // 
+            // btnDilatação
+            // 
+            this.btnDilatação.BackColor = System.Drawing.Color.White;
+            this.btnDilatação.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDilatação.ForeColor = System.Drawing.Color.Black;
+            this.btnDilatação.Location = new System.Drawing.Point(6, 77);
+            this.btnDilatação.Name = "btnDilatação";
+            this.btnDilatação.Size = new System.Drawing.Size(97, 24);
+            this.btnDilatação.TabIndex = 25;
+            this.btnDilatação.Text = "Dilatação ";
+            this.btnDilatação.UseVisualStyleBackColor = false;
+            this.btnDilatação.Click += new System.EventHandler(this.btnDilatação_Click);
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.BackColor = System.Drawing.Color.Transparent;
+            this.label40.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.Black;
+            this.label40.Location = new System.Drawing.Point(28, 7);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(139, 15);
+            this.label40.TabIndex = 7;
+            this.label40.Text = "Operações Morfológicas";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.panel14);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel3);
@@ -1342,14 +1516,16 @@
             this.panel11.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1447,6 +1623,18 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button btnContorno;
+        private System.Windows.Forms.Button btnFechamento;
+        private System.Windows.Forms.Button btnAbertura;
+        private System.Windows.Forms.Button btnErosao;
+        private System.Windows.Forms.Button btnDilatação;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ComboBox cbxFormatoElemento;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.ComboBox cbxTamanhoMatrixMorfologicas;
     }
 }
 
