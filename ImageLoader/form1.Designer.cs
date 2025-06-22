@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btImg1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -136,6 +136,7 @@
             this.btnErosao = new System.Windows.Forms.Button();
             this.btnDilatação = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
+            this.cbxOrder = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
             this.panel1.SuspendLayout();
@@ -783,17 +784,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chartOrigImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea1.Name = "ChartArea1";
-            this.chartOrigImage.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartOrigImage.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chartOrigImage.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartOrigImage.Legends.Add(legend3);
             this.chartOrigImage.Location = new System.Drawing.Point(3, 42);
             this.chartOrigImage.Name = "chartOrigImage";
             this.chartOrigImage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartOrigImage.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartOrigImage.Series.Add(series3);
             this.chartOrigImage.Size = new System.Drawing.Size(393, 224);
             this.chartOrigImage.TabIndex = 29;
             this.chartOrigImage.Text = "Histogran of image";
@@ -801,17 +802,17 @@
             // chartEqualizedImage
             // 
             this.chartEqualizedImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea2.Name = "ChartArea1";
-            this.chartEqualizedImage.ChartAreas.Add(chartArea2);
-            legend2.Name = "Histogran of image";
-            this.chartEqualizedImage.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.chartEqualizedImage.ChartAreas.Add(chartArea4);
+            legend4.Name = "Histogran of image";
+            this.chartEqualizedImage.Legends.Add(legend4);
             this.chartEqualizedImage.Location = new System.Drawing.Point(3, 290);
             this.chartEqualizedImage.Name = "chartEqualizedImage";
             this.chartEqualizedImage.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Histogran of image";
-            series2.Name = "Series1";
-            this.chartEqualizedImage.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Histogran of image";
+            series4.Name = "Series1";
+            this.chartEqualizedImage.Series.Add(series4);
             this.chartEqualizedImage.Size = new System.Drawing.Size(393, 217);
             this.chartEqualizedImage.TabIndex = 30;
             this.chartEqualizedImage.Text = "chart2";
@@ -915,6 +916,7 @@
             // 
             this.panel12.BackColor = System.Drawing.Color.Transparent;
             this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.cbxOrder);
             this.panel12.Controls.Add(this.label18);
             this.panel12.Controls.Add(this.btnGaussiano);
             this.panel12.Controls.Add(this.label17);
@@ -1462,6 +1464,64 @@
             this.label40.TabIndex = 7;
             this.label40.Text = "Operações Morfológicas";
             // 
+            // cbxOrder
+            // 
+            this.cbxOrder.FormattingEnabled = true;
+            this.cbxOrder.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48"});
+            this.cbxOrder.Location = new System.Drawing.Point(175, 68);
+            this.cbxOrder.Name = "cbxOrder";
+            this.cbxOrder.Size = new System.Drawing.Size(62, 21);
+            this.cbxOrder.TabIndex = 24;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1635,6 +1695,7 @@
         private System.Windows.Forms.ComboBox cbxFormatoElemento;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.ComboBox cbxTamanhoMatrixMorfologicas;
+        private System.Windows.Forms.ComboBox cbxOrder;
     }
 }
 

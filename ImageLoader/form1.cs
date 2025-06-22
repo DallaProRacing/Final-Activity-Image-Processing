@@ -826,16 +826,38 @@ namespace ImageLoader
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            if (img1 == null || cbxTamMatriz.SelectedItem == null)
+            if (img1 == null)
             {
-                MessageBox.Show("Carregue uma imagem e selecione o tamanho da matriz.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Carregue uma imagem antes de aplicar o filtro de ordem.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            if (cbxTamMatriz.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione o tamanho da matriz.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (cbxOrder.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione a ordem do filtro no campo 'Order'.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             int tamanho = int.Parse(cbxTamMatriz.SelectedItem.ToString());
-            img1 = AplicarFiltroOrdem(img1, tamanho);
+            int ordem = int.Parse(cbxOrder.SelectedItem.ToString());
+
+            int maxOrdem = tamanho * tamanho - 1;
+            if (ordem < 0 || ordem > maxOrdem)
+            {
+                MessageBox.Show($"Para uma matriz {tamanho}x{tamanho}, a ordem deve estar entre 0 e {maxOrdem}.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            img1 = AplicarFiltroOrdem(img1, tamanho, ordem);
             pictureBoxResult.Image = img1;
         }
-        private Bitmap AplicarFiltroOrdem(Bitmap original, int tamanho)
+        private Bitmap AplicarFiltroOrdem(Bitmap original, int tamanho, int ordem)
         {
             Bitmap resultado = new Bitmap(original.Width, original.Height);
             int offset = tamanho / 2;
@@ -857,6 +879,7 @@ namespace ImageLoader
                             int px = x + i;
                             int py = y + j;
 
+                            // Tratamento de bordas (duplicação)
                             if (px < 0) px = 0;
                             if (py < 0) py = 0;
                             if (px >= original.Width) px = original.Width - 1;
@@ -873,12 +896,14 @@ namespace ImageLoader
                     Array.Sort(r);
                     Array.Sort(g);
                     Array.Sort(b);
-                    resultado.SetPixel(x, y, Color.FromArgb(r[tamanho], g[tamanho], b[tamanho]));
+
+                    resultado.SetPixel(x, y, Color.FromArgb(r[ordem], g[ordem], b[ordem]));
                 }
             }
 
             return resultado;
         }
+
 
         private void btnSuavizacao_Click(object sender, EventArgs e)
         {
